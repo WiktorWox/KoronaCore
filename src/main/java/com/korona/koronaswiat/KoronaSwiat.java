@@ -1,6 +1,7 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
+import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -31,6 +32,8 @@ public class KoronaSwiat {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        Villager.VILLAGER_PROFESSION.register(eventBus);
+        Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

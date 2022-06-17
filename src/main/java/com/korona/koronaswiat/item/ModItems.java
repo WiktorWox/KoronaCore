@@ -21,7 +21,7 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 
-    // Items:
+    // Dodane przedmioty:
     public static final RegistryObject<Item> CORONACOIN = ITEMS.register("coronacoin",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
     public static final RegistryObject<Item> STRANGE_BREAD = ITEMS.register("strange_bread",
