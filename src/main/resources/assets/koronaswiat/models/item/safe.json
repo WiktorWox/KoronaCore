@@ -1,0 +1,6 @@
+{
+  "parent": "koronaswiat:block/safe",
+  "textures": {
+    "layer0": "koronaswiat:item/safe"
+  }
+}

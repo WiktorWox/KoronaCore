@@ -1,5 +1,6 @@
 package com.korona.koronaswiat;
 
+import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -29,7 +30,7 @@ public class KoronaSwiat {
     public KoronaSwiat() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
-
+        ModBlocks.register(eventBus);
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

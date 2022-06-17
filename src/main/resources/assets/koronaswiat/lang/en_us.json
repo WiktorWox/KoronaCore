@@ -1,4 +1,6 @@
 {
   "item.koronaswiat.coronacoin": "CoronaCoin",
-  "item.koronaswiat.strange_bread": "Strange bread"
+  "item.koronaswiat.strange_bread": "Strange bread",
+
+  "block.koronaswiat.safe": "Safe"
 }

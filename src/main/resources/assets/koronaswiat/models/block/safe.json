@@ -1,0 +1,11 @@
+{
+  "parent": "block/iron_block",
+  "textures": {
+    "north": "koronaswiat:block/safe/safe_north",
+    "south": "koronaswiat:block/safe/safe_back",
+    "east": "koronaswiat:block/safe/safe_side",
+    "west": "koronaswiat:block/safe/safe_side",
+    "up": "koronaswiat:block/safe/safe_side",
+    "down": "koronaswiat:block/safe/safe_down"
+  }
+}
