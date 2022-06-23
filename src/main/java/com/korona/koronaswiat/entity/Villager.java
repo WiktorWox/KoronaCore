@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.item.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
@@ -42,16 +43,14 @@ public class Villager {
     public static void registerPOI(){
         try {
             ObfuscationReflectionHelper.findMethod(PointOfInterestType.class, "registerBlockStates", PointOfInterestType.class).invoke(null, BANKER_POI.get());
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+        } catch (InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
     public static void fillTradeData() {
         MultiItemForEmeraldsTrade multiTrade = new MultiItemForEmeraldsTrade(ImmutableList.of(Items.ACACIA_BOAT, Items.OAK_BOAT), ImmutableList.of(1, 1, 1), ImmutableList.of(3, 4, 5), 5, 10);
         //                      profession level                                                            sell item        cost           in stock    vil exp gained
-        VillagerTrades.ITrade[] level1 = new VillagerTrades.ITrade[]{new VillagerTrades.EmeraldForItemsTrade(Items.OBSIDIAN, 12, 5, 10)};
+        VillagerTrades.ITrade[] level1 = new VillagerTrades.ITrade[]{new VillagerTrades.EmeraldForItemsTrade(ModItems.CORONACOIN.get(), 3, 30, 0), new VillagerTrades.ItemsForEmeraldsTrade(ModItems.CORONACOIN.get(), 1, 3, 0)};
         VillagerTrades.ITrade[] level2 = new VillagerTrades.ITrade[]{new VillagerTrades.EmeraldForItemsTrade(Items.WHITE_WOOL, 12, 5, 10)};
         VillagerTrades.ITrade[] level3 = new VillagerTrades.ITrade[]{new VillagerTrades.EmeraldForItemsTrade(Items.OBSIDIAN, 12, 5, 10)};
         VillagerTrades.ITrade[] level4 = new VillagerTrades.ITrade[]{new VillagerTrades.EmeraldForItemsTrade(Items.OBSIDIAN, 12, 5, 10)};
