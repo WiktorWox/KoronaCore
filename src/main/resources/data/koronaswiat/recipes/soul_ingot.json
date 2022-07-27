@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#D#",
+        "KiK",
+        "PHP"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:ghast_tear"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        },
+        "K": {
+            "item": "koronaswiat:soul"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "P": {
+            "item": "minecraft:prismarine_shard"
+        },
+        "H": {
+            "item": "minecraft:prismarine_crystals"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:soul_ingot",
+        "count": 1
+    }
+}

@@ -1,6 +1,9 @@
 {
   "item.koronaswiat.coronacoin": "CoronaCoin",
   "item.koronaswiat.strange_bread": "Strange bread",
+  "item.koronaswiat.soul": "Soul in the bottle",
+  "item.koronaswiat.soul_sand_dust": "Soul sand dust",
+  "item.koronaswiat.soul_ingot": "Soul ingot",
 
   "entity.minecraft.villager.koronaswiat.banker_prof": "Banker"
 }

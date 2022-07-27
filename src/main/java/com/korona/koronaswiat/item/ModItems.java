@@ -26,4 +26,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
     public static final RegistryObject<Item> STRANGE_BREAD = ITEMS.register("strange_bread",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).food(new Food.Builder().effect(() -> new EffectInstance(Effects.DIG_SLOWDOWN, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.CONFUSION, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.WATER_BREATHING, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.BLINDNESS, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.WEAKNESS, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.POISON, 600, 3), 1.0F).effect(() -> new EffectInstance(Effects.BAD_OMEN, 36000, 0), 0.15F).saturationMod(0.8F).nutrition(5).alwaysEat().build())));
+    public static final RegistryObject<Item> SOUL = ITEMS.register("soul",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> SOUL_SAND_DUST = ITEMS.register("soul_sand_dust",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> SOUL_INGOT = ITEMS.register("soul_ingot",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 }
