@@ -32,6 +32,7 @@ import java.util.Random;
 
 public class Villager {
     public static final RegistryObject<Block> ENDER_CHEST = RegistryObject.of(new ResourceLocation("minecraft:ender_chest"), ForgeRegistries.BLOCKS);
+//    public static final RegistryObject<Item> BUNDLE = RegistryObject.of(new ResourceLocation("bundlesplus:bundle"), ForgeRegistries.ITEMS);
 
     public static final DeferredRegister<PointOfInterestType> POINT_OF_INTEREST_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, KoronaSwiat.MOD_ID);
     public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSION = DeferredRegister.create(ForgeRegistries.PROFESSIONS, KoronaSwiat.MOD_ID);
@@ -44,7 +45,7 @@ public class Villager {
         try {
             ObfuscationReflectionHelper.findMethod(PointOfInterestType.class, "registerBlockStates", PointOfInterestType.class).invoke(null, BANKER_POI.get());
         } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
     public static void fillTradeData() {
@@ -59,7 +60,7 @@ public class Villager {
                 new BasicTrade(new ItemStack(Items.PRISMARINE_SHARD, 4), new ItemStack(ModItems.CORONACOIN.get(), 30), new ItemStack(Items.IRON_INGOT, 1), 3,  16, 0.3F)
         };
         VillagerTrades.ITrade[] level3 = new VillagerTrades.ITrade[]{
-                new BasicTrade(new ItemStack(ModItems.CORONACOIN.get(), 32), new ItemStack(Items.RABBIT_HIDE, 1), 3,  10, 0.5F),
+                new BasicTrade(new ItemStack(ModItems.CORONACOIN.get(), 64), new ItemStack(ModItems.MEGACORONACOIN.get(), 1), 3,  10, 0.5F),
                 new BasicTrade(new ItemStack(Items.DIAMOND, 4), new ItemStack(ModItems.CORONACOIN.get(), 11), 7,  8, 0)
         };
         VillagerTrades.ITrade[] level4 = new VillagerTrades.ITrade[]{
@@ -68,7 +69,8 @@ public class Villager {
         };
         VillagerTrades.ITrade[] level5 = new VillagerTrades.ITrade[]{
                 netheriteScrapTrade,
-                new BasicTrade(new ItemStack(ModItems.CORONACOIN.get(), 32), new ItemStack(Items.COBBLESTONE, 1), 1,  18, 0.3F)
+//                new BasicTrade(new ItemStack(ModItems.MEGACORONACOIN.get(), 21), new ItemStack(ModItems.CORONACOIN.get(), 37), new ItemStack(BUNDLE.get(), 1), 3,  10, 0.5F)
+
         };
         VillagerTrades.TRADES.put(BANKER_PROFESSION.get(), toIntMap(ImmutableMap.of(1, level1, 2, level2, 3, level3, 4, level4, 5, level5)));
     }

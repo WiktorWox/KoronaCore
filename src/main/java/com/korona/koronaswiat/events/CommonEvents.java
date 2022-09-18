@@ -10,7 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class CommonEvents {
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
-            Villager.registerPOI();
+//            Villager.registerPOI();
             Villager.fillTradeData();
     }
 }
