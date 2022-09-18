@@ -1,15 +1,14 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.item.custom.ScytheWeapon;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -31,5 +30,11 @@ public class ModItems {
     public static final RegistryObject<Item> SOUL_SAND_DUST = ITEMS.register("soul_sand_dust",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
     public static final RegistryObject<Item> SOUL_INGOT = ITEMS.register("soul_ingot",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
+            () -> new ScytheWeapon(new Item.Properties().tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
+    public static final RegistryObject<Item> ANDURIL = ITEMS.register("anduril",
+            () -> new ScytheWeapon(new Item.Properties().tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
+    public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register("megacoronacoin",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 }
