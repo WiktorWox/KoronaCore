@@ -3,6 +3,7 @@ package com.korona.koronaswiat;
 import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.util.ModSoundEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +33,7 @@ public class KoronaSwiat {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModSoundEvent.register(eventBus);
         Villager.VILLAGER_PROFESSION.register(eventBus);
         Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
 

@@ -1,0 +1,10 @@
+
+{
+  "item_scythe_hit": {
+    "category": "players",
+    "subtitle": "koronaswiat.item_scythe_hit",
+    "sounds": [
+      "koronaswiat:item_scythe_hit"
+    ]
+  }
+}

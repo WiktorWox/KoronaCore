@@ -1,6 +1,7 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.item.custom.AndurilWeapon;
 import com.korona.koronaswiat.item.custom.ScytheWeapon;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
@@ -34,7 +35,7 @@ public class ModItems {
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
             () -> new ScytheWeapon(new Item.Properties().tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
     public static final RegistryObject<Item> ANDURIL = ITEMS.register("anduril",
-            () -> new ScytheWeapon(new Item.Properties().tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
+            () -> new AndurilWeapon(new Item.Properties().tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
     public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register("megacoronacoin",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 }

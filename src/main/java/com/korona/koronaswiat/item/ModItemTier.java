@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public enum ModItemTier implements IItemTier {
     SOUL(3, 978, 4f, 4f, 14,
             () -> Ingredient.of(ModItems.SOUL_INGOT.get())),
-    SCYTHE(2, 270, 4f, 4f, 10,
+    SCYTHE(2, 270, 4f, 2f, 10,
             () -> Ingredient.of(Items.IRON_INGOT));
 
     private final int harvestLevel;
