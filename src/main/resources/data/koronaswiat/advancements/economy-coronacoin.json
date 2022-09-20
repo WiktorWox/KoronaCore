@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:coronacoin"
+    },
+    "title": "Przeżylem 30 dni mając jednego pensa",
+    "description": "Zdobądź 1 KoronaCoina",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:economy-main",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "koronaswiat:coronacoin"
+          }
+        ]
+      }
+    }
+  }
+}

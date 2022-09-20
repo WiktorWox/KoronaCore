@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:strange_bread"
+    },
+    "title": "Sekretny przepis",
+    "description": "Zjedz Dziwny chleb",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-blue_campfire",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "koronaswiat:strange_bread"
+          ]
+        }
+      }
+    }
+  }
+}

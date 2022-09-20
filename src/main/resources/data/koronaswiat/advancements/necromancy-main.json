@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:soul"
+    },
+    "title": "Nekromancja",
+    "description": "Spójrz na magię od drugiej strony",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "koronaswiat:textures/interface/necromancy-advancements.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:soul_sand"
+          }
+        ]
+      }
+    }
+  }
+}

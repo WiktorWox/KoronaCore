@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "title": "To koniec (Elżbiety II)?",
+    "description": "Zdobądź 5 totemów nieśmiertelności",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:economy-coronacoin",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:totem_of_undying",
+            "count": 5
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:soul_campfire"
+    },
+    "title": "Rytualny płomień",
+    "description": "Postaw ognisko dusz",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-main",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:soul_campfire"
+      }
+    }
+  }
+}

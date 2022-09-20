@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:megacoronacoin"
+    },
+    "title": "Skąpiec",
+    "description": "Zdobądź 20 MegaKoronaCoinów",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:economy-coronacoin",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "koronaswiat:megacoronacoin",
+            "count": 20
+          }
+        ]
+      }
+    }
+  }
+}
