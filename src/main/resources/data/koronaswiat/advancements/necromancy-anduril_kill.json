@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:anduril"
+    },
+    "title": "Boskie uderzenie",
+    "description": "Zadaj wrogowi obrażenia ogłuszając go Andúrilem",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-soul_ingot",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "effects": {
+            "minecraft:blindness": {
+              "visible": false
+            }
+          }
+        },
+        "damage": {
+          "source_entity": {
+            "equipment": {
+              "mainhand": {
+                "items": [
+                  "koronaswiat:anduril"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

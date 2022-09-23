@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:soul_ingot"
+    },
+    "title": "Magiczna materia",
+    "description": "Zdobądź sztabkę dusz",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-soul",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "koronaswiat:soul_ingot"
+          }
+        ]
+      }
+    }
+  }
+}
