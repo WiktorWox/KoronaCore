@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "block/alchemical_filter",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "block/alchemical_filter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "block/alchemical_filter",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "block/alchemical_filter"
+    }
+  }
+}

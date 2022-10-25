@@ -20,10 +20,9 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, KoronaSwiat.MOD_ID);
 
-//    Schemat dodawania bloku, w tym przypadku sejfu (skorzystać w przypadku dodawania bloku):
-//    public static final RegistryObject<Block> SAFE = registerBlock("safe",
-//            () -> new Block(AbstractBlock.Properties.of(Material.DECORATION)
-//                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
+    public static final RegistryObject<Block> ALCHEMICAL_FILTER = registerBlock("alchemical_filter",
+            () -> new Block(AbstractBlock.Properties.of(Material.DECORATION)
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
