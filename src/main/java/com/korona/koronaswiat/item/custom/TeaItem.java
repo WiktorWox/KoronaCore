@@ -1,4 +1,4 @@
-package com.korona.koronaswiat.item;
+package com.korona.koronaswiat.item.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,8 +10,8 @@ import net.minecraft.util.DrinkHelper;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class Tea extends Item {
-    public Tea() {
+public class TeaItem extends Item {
+    public TeaItem() {
         super(new Item.Properties()
                 .tab(ItemGroup.TAB_FOOD)
                 .food(new Food.Builder()
