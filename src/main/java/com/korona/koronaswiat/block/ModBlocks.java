@@ -1,6 +1,7 @@
 package com.korona.koronaswiat.block;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.block.custom.AlchemicalFilter;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -21,7 +22,7 @@ public class ModBlocks {
             = DeferredRegister.create(ForgeRegistries.BLOCKS, KoronaSwiat.MOD_ID);
 
     public static final RegistryObject<Block> ALCHEMICAL_FILTER = registerBlock("alchemical_filter",
-            () -> new Block(AbstractBlock.Properties.of(Material.DECORATION)
+            () -> new AlchemicalFilter(AbstractBlock.Properties.of(Material.DECORATION)
                     .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
 
 

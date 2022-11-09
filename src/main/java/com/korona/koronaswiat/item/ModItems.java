@@ -3,6 +3,8 @@ package com.korona.koronaswiat.item;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.custom.AndurilWeapon;
 import com.korona.koronaswiat.item.custom.ScytheWeapon;
+import com.korona.koronaswiat.item.custom.TeaItem;
+import com.korona.koronaswiat.item.custom.WandItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -43,31 +45,45 @@ public class ModItems {
                             .nutrition(5)
                             .alwaysEat()
                             .build())));
-    public static final RegistryObject<Item> TEA_EARL_GREY = ITEMS.register("tea_earl_grey",
-            () -> new Tea());
-    public static final RegistryObject<Item> TEA_YUNNAN = ITEMS.register("tea_yunnan",
-            () -> new Tea());
-    public static final RegistryObject<Item> TEA_YERBA = ITEMS.register("tea_yerba",
-            () -> new Tea());
-    public static final RegistryObject<Item> TEA_GREEN = ITEMS.register("tea_green",
-            () -> new Tea());
-    public static final RegistryObject<Item> SOUL = ITEMS.register("soul",
+    public static final RegistryObject<Item> TEA_EARL_GREY = ITEMS.register(
+            "tea_earl_grey",
+            () -> new TeaItem());
+    public static final RegistryObject<Item> TEA_YUNNAN = ITEMS.register(
+            "tea_yunnan",
+            () -> new TeaItem());
+    public static final RegistryObject<Item> TEA_YERBA = ITEMS.register(
+            "tea_yerba",
+            () -> new TeaItem());
+    public static final RegistryObject<Item> TEA_GREEN = ITEMS.register(
+            "tea_green",
+            () -> new TeaItem());
+    public static final RegistryObject<Item> SOUL = ITEMS.register(
+            "soul",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
-    public static final RegistryObject<Item> SOUL_SAND_DUST = ITEMS.register("soul_sand_dust",
+    public static final RegistryObject<Item> SOUL_SAND_DUST = ITEMS.register(
+            "soul_sand_dust",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
-    public static final RegistryObject<Item> SOUL_INGOT = ITEMS.register("soul_ingot",
+    public static final RegistryObject<Item> SOUL_INGOT = ITEMS.register(
+            "soul_ingot",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 
-    public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
+    public static final RegistryObject<Item> WAND = ITEMS.register(
+            "wand",
+            () -> new WandItem());
+
+    public static final RegistryObject<Item> SCYTHE = ITEMS.register(
+            "scythe",
             () -> new ScytheWeapon(new Item.Properties()
                     .tab(ItemGroup.TAB_COMBAT).stacksTo(1)));
 
-    public static final RegistryObject<Item> ANDURIL = ITEMS.register("anduril",
+    public static final RegistryObject<Item> ANDURIL = ITEMS.register(
+            "anduril",
             () -> new AndurilWeapon(new Item.Properties()
                     .tab(ItemGroup.TAB_COMBAT)
                     .stacksTo(1)));
-    public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register("megacoronacoin",
+    public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register(
+            "megacoronacoin",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 }

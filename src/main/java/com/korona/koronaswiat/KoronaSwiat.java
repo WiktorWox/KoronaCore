@@ -1,11 +1,16 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
+import com.korona.koronaswiat.container.ModContainers;
+import com.korona.koronaswiat.container.WandContainer;
 import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.screen.WandScreen;
+import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.util.ModSoundEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -36,13 +41,15 @@ public class KoronaSwiat {
     // Directly reference a log4j logger.
 //    public static final RegistryObject<Item> GLASS_BOTTLE = RegistryObject.of(new ResourceLocation("minecraft:potion"), ForgeRegistries.ITEMS);
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "koronaswiat";
     public KoronaSwiat() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
         ModSoundEvent.register(eventBus);
+        ModContainers.register((eventBus));
         Villager.VILLAGER_PROFESSION.register(eventBus);
         Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
 
@@ -70,6 +77,10 @@ public class KoronaSwiat {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        event.enqueueWork(() -> {
+            ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
+                    WandScreen::new);
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

@@ -13,6 +13,9 @@
 
   "item.koronaswiat.scythe": "Kosa ponurego żniwiarza",
   "item.koronaswiat.anduril": "Andúril",
+  "item.koronaswiat.wand": "Magiczna laska",
 
-  "entity.minecraft.villager.koronaswiat.banker_prof": "Bankier"
+  "entity.minecraft.villager.koronaswiat.banker_prof": "Bankier",
+
+  "screen.koronaswiat.wand": "Magiczna laska"
 }

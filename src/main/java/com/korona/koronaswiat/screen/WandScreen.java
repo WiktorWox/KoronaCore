@@ -1,0 +1,37 @@
+package com.korona.koronaswiat.screen;
+
+import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.container.WandContainer;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+
+public class WandScreen extends ContainerScreen<WandContainer> {
+    private final ResourceLocation GUI = new ResourceLocation(KoronaSwiat.MOD_ID,
+            "textures/gui/wand_gui.png");
+
+    public WandScreen(WandContainer p_i51105_1_, PlayerInventory p_i51105_2_, ITextComponent p_i51105_3_) {
+        super(p_i51105_1_, p_i51105_2_, p_i51105_3_);
+    }
+
+    @Override
+    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
+        this.renderBackground(matrixStack);
+        this.renderBg(matrixStack, partialTicks, mouseX, mouseY);
+        super.render(matrixStack, mouseX, mouseY, partialTicks);
+        this.renderTooltip(matrixStack, mouseX, mouseY);
+    }
+
+    @Override
+    protected void renderBg(MatrixStack matrixStack, float particalTicks, int x, int y) {
+        RenderSystem.color4f(1f, 1f, 1f, 1f);
+        this.minecraft.getTextureManager().bind(GUI);
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+        this.blit(matrixStack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+
+    }
+}
