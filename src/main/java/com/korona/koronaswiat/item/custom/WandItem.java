@@ -1,34 +1,60 @@
 package com.korona.koronaswiat.item.custom;
 
-import com.korona.koronaswiat.container.ModContainers;
-import com.korona.koronaswiat.tileentity.ModTileEntities;
-import com.korona.koronaswiat.tileentity.WandTile;
-import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
+import com.korona.koronaswiat.capabilities.WandCapabilityProvider;
+import com.korona.koronaswiat.container.WandContainer;
+import com.korona.koronaswiat.screen.WandScreen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.common.extensions.IForgeItem;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
-import java.util.concurrent.Callable;
-import java.util.function.Supplier;
+import javax.annotation.Nullable;
 
-public class WandItem extends Item {
+public class WandItem extends Item implements ICapabilityProvider {
+    LazyOptional<ItemStackHandler> inventoryHandler = LazyOptional.of(ItemStackHandler::new);
     public WandItem() {
         super(new Properties()
                 .tab(ItemGroup.TAB_COMBAT)
                 .stacksTo(1));
 
     }
-    public ItemStack finishUsingItem(ItemStack p_77654_1_, World p_77654_2_, LivingEntity p_77654_3_) {
-        ItemStack itemstack = super.finishUsingItem(p_77654_1_, p_77654_2_, p_77654_3_);
-        return p_77654_3_ instanceof PlayerEntity && ((PlayerEntity)p_77654_3_).abilities.instabuild ? itemstack : new ItemStack(Items.GLASS_BOTTLE);
+
+    public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
+        Minecraft.getInstance().setScreen(new WandScreen( new WandContainer(player.getId(), world, player.blockPosition(), player.inventory, player), player.inventory, new TranslationTextComponent("screen.koronaswiat.wand")));
+        return ActionResult.success(itemstack);
+
+    };
+    public ItemStack finishUsingItem(ItemStack itemStack, World world, LivingEntity player) {
+        ItemStack itemstack = super.finishUsingItem(itemStack, world, player);
+        return player instanceof PlayerEntity && ((PlayerEntity)player).abilities.instabuild ? itemstack : new ItemStack(Items.GLASS_BOTTLE);
     }
-    public UseAction getUseAnimation(ItemStack p_77661_1_) {
+    public UseAction getUseAnimation(ItemStack itemStack) {
         return UseAction.DRINK;
     }
-//    public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-//        return null;
-//    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+        if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return inventoryHandler.cast();
+        }
+        return null;
+    }
+
+    @Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundNBT nbt) {
+        return new WandCapabilityProvider();
+    }
 }

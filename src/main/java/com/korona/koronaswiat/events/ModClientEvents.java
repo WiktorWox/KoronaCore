@@ -23,14 +23,14 @@ import net.minecraftforge.registries.GameData;
 @Mod.EventBusSubscriber(modid = KoronaSwiat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ModClientEvents {
 
-    @SubscribeEvent (priority = EventPriority.HIGHEST)
-    public static void onCraftingTableOpen(PlayerInteractEvent.RightClickItem event) {
-        KoronaSwiat.LOGGER.info(event.getItemStack().getItem());
-        if(event.getItemStack().getItem() == ModItems.WAND.get().getItem()) {
-            KoronaSwiat.LOGGER.info("true");
-            Minecraft.getInstance().setScreen(new WandScreen( new WandContainer(event.getPlayer().getId(), event.getPlayer().level, event.getPos(), event.getPlayer().inventory, event.getPlayer()), event.getPlayer().inventory, new TranslationTextComponent("screen.koronaswiat.wand")));
-        }
-    }
+//    @SubscribeEvent (priority = EventPriority.HIGHEST)
+//    public static void onCraftingTableOpen(PlayerInteractEvent.RightClickItem event) {
+//        KoronaSwiat.LOGGER.info(event.getItemStack().getItem());
+//        if(event.getItemStack().getItem() == ModItems.WAND.get().getItem()) {
+//            KoronaSwiat.LOGGER.info("true");
+//            Minecraft.getInstance().setScreen(new WandScreen( new WandContainer(event.getPlayer().getId(), event.getPlayer().level, event.getPos(), event.getPlayer().inventory, event.getPlayer()), event.getPlayer().inventory, new TranslationTextComponent("screen.koronaswiat.wand")));
+//        }
+//    }
 
     @SubscribeEvent // LivingEntity#func_233580_cy_c() ----> LivingEntity#getPosition()
     public static void onJumpWithStick(LivingEvent.LivingJumpEvent event) {

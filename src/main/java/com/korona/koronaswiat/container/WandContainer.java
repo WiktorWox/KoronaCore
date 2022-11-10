@@ -17,18 +17,18 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
 public class WandContainer extends Container {
-    private final TileEntity tileEntity;
+    private final ItemStack capabilityItemHandler;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
     public WandContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
         super(ModContainers.WAND_CONTAINER.get(), windowId);
-        this.tileEntity = world.getBlockEntity(pos);
+        this.capabilityItemHandler = player.getMainHandItem();
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
         layoutPlayerInventorySlots(8, 84);
 
-        if(tileEntity != null) {
-            tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
+        if(capabilityItemHandler != null) {
+            capabilityItemHandler.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
                 addSlot(new SlotItemHandler(h, 0, 62, 44));
                 addSlot(new SlotItemHandler(h, 1, 80, 44));
                 addSlot(new SlotItemHandler(h, 2, 98, 44));
@@ -38,8 +38,7 @@ public class WandContainer extends Container {
 
     @Override
     public boolean stillValid(PlayerEntity player) {
-        return stillValid(IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos()),
-                player, ModBlocks.ALCHEMICAL_FILTER.get());
+        return true;
     }
 
     private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
