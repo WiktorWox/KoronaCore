@@ -66,7 +66,9 @@ public class WandCapabilityProvider implements ICapabilitySerializable<INBT> {
     // Provides the Inventory
     @Nonnull @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, Direction side) {
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return handler.cast();
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return handler.cast();
+        }
         // If we needed to provide more than one capability, we'd simply add another check:
         // if (cap == SOME_OTHER_CAPABILITY) return (otherCapability)
 

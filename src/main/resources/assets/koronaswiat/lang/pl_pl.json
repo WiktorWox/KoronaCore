@@ -17,5 +17,11 @@
 
   "entity.minecraft.villager.koronaswiat.banker_prof": "Bankier",
 
-  "screen.koronaswiat.wand": "Magiczna laska"
+  "screen.koronaswiat.wand": "Magiczna laska",
+
+  "tooltip.koronaswiat.anduril": "Jeśli zaatakujesz używając tzw. naładowanego ataku, jest szansa, że przeciwnik zostanie §logłuszony§r",
+  "tooltip.koronaswiat.soul_pickaxe": "Możesz użyć tego przedmiotu trzymając §9ALT§r. Wtedy kilof zużyje §oDuszę w butelce§r, ale także będzie o wiele potężniejszy",
+  "tooltip.koronaswiat.shift": "Trzymaj §eSHIFT§r, aby dowiedzieć się więcej",
+
+  "text.koronaswiat.stun_text": "Zostałeś ogłuszony!"
 }

@@ -8,7 +8,7 @@ import net.minecraft.util.LazyValue;
 import java.util.function.Supplier;
 
 public enum ModItemTier implements IItemTier {
-    SOUL(3, 978, 4f, 4f, 14,
+    SOUL(3, 978, 4f, 3f, 14,
             () -> Ingredient.of(ModItems.SOUL_INGOT.get())),
     SCYTHE(2, 270, 4f, 2f, 10,
             () -> Ingredient.of(Items.IRON_INGOT));
@@ -56,6 +56,6 @@ public enum ModItemTier implements IItemTier {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return getRepairIngredient();
+        return repairMaterial.get();
     }
 }

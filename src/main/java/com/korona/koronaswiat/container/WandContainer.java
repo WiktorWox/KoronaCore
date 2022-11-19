@@ -1,14 +1,10 @@
 package com.korona.koronaswiat.container;
 
-import com.korona.koronaswiat.block.ModBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -17,23 +13,21 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
 public class WandContainer extends Container {
-    private final ItemStack capabilityItemHandler;
+    private final ItemStack wandItemStack;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
     public WandContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
         super(ModContainers.WAND_CONTAINER.get(), windowId);
-        this.capabilityItemHandler = player.getMainHandItem();
+        this.wandItemStack = player.getMainHandItem();
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
         layoutPlayerInventorySlots(8, 84);
 
-        if(capabilityItemHandler != null) {
-            capabilityItemHandler.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
-                addSlot(new SlotItemHandler(h, 0, 62, 44));
-                addSlot(new SlotItemHandler(h, 1, 80, 44));
-                addSlot(new SlotItemHandler(h, 2, 98, 44));
-            });
-        }
+//        this.wandItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
+//            addSlot(new SlotItemHandler(h, 36, 62, 44));
+//            addSlot(new SlotItemHandler(h, 1, 80, 44));
+//            addSlot(new SlotItemHandler(h, 2, 98, 44));
+//        });
     }
 
     @Override
@@ -61,10 +55,10 @@ public class WandContainer extends Container {
     }
 
     private void layoutPlayerInventorySlots(int leftCol, int topRow) {
-        addSlotBox(playerInventory, 9, leftCol, topRow, 9, 18, 3, 18);
+        addSlotBox(this.playerInventory, 9, leftCol, topRow, 9, 18, 3, 18);
 
         topRow += 58;
-        addSlotRange(playerInventory, 0, leftCol, topRow, 9, 18);
+        addSlotRange(this.playerInventory, 0, leftCol, topRow, 9, 18);
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -80,41 +74,41 @@ public class WandContainer extends Container {
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
-    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
+    private static final int ISH_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
+    private static final int ISH_INVENTORY_SLOT_COUNT = 3;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
 
-    @Override
-    public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {
-        Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
-        ItemStack sourceStack = sourceSlot.getItem();
-        ItemStack copyOfSourceStack = sourceStack.copy();
-
-        // Check if the slot clicked is one of the vanilla container slots
-        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            // This is a vanilla container slot so merge the stack into the tile inventory
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                    + TE_INVENTORY_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;  // EMPTY_ITEM
-            }
-        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            // This is a TE slot so merge the stack into the players inventory
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;
-            }
-        } else {
-            System.out.println("Invalid slotIndex:" + index);
-            return ItemStack.EMPTY;
-        }
-        // If stack size == 0 (the entire stack was moved) set slot contents to null
-        if (sourceStack.getCount() == 0) {
-            sourceSlot.set(ItemStack.EMPTY);
-        } else {
-            sourceSlot.setChanged();
-        }
-        sourceSlot.onTake(playerEntity, sourceStack);
-        return copyOfSourceStack;
-    }
+//    @Override
+//    public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {
+//        Slot sourceSlot = slots.get(index);
+//        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
+//        ItemStack sourceStack = sourceSlot.getItem();
+//        ItemStack copyOfSourceStack = sourceStack.copy();
+//
+//        // Check if the slot clicked is one of the vanilla container slots
+//        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+//            // This is a vanilla container slot so merge the stack into the tile inventory
+//            if (!moveItemStackTo(sourceStack, ISH_INVENTORY_FIRST_SLOT_INDEX, ISH_INVENTORY_FIRST_SLOT_INDEX
+//                    + ISH_INVENTORY_SLOT_COUNT, false)) {
+//                return ItemStack.EMPTY;  // EMPTY_ITEM
+//            }
+//        } else if (index < ISH_INVENTORY_FIRST_SLOT_INDEX + ISH_INVENTORY_SLOT_COUNT) {
+//            // This is a TE slot so merge the stack into the players inventory
+//            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
+//                return ItemStack.EMPTY;
+//            }
+//        } else {
+//            System.out.println("Invalid slotIndex:" + index);
+//            return ItemStack.EMPTY;
+//        }
+//        // If stack size == 0 (the entire stack was moved) set slot contents to null
+//        if (sourceStack.getCount() == 0) {
+//            sourceSlot.set(ItemStack.EMPTY);
+//        } else {
+//            sourceSlot.setChanged();
+//        }
+//        sourceSlot.onTake(playerEntity, sourceStack);
+//        return copyOfSourceStack;
+//    }
 }

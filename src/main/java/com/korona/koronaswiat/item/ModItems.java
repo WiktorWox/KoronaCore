@@ -1,10 +1,7 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
-import com.korona.koronaswiat.item.custom.AndurilWeapon;
-import com.korona.koronaswiat.item.custom.ScytheWeapon;
-import com.korona.koronaswiat.item.custom.TeaItem;
-import com.korona.koronaswiat.item.custom.WandItem;
+import com.korona.koronaswiat.item.custom.*;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -24,7 +21,7 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 
-    // Dodane przedmioty:
+    // Added items:
     public static final RegistryObject<Item> CORONACOIN = ITEMS.register("coronacoin",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
@@ -81,6 +78,12 @@ public class ModItems {
             "anduril",
             () -> new AndurilWeapon(new Item.Properties()
                     .tab(ItemGroup.TAB_COMBAT)
+                    .stacksTo(1)));
+
+    public static final RegistryObject<Item> SOUL_PICKAXE = ITEMS.register(
+            "soul_pickaxe",
+            () -> new SoulPickaxeTool(new Item.Properties()
+                    .tab(ItemGroup.TAB_TOOLS)
                     .stacksTo(1)));
     public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register(
             "megacoronacoin",

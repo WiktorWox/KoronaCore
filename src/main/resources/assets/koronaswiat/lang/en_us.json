@@ -18,5 +18,12 @@
 
   "entity.minecraft.villager.koronaswiat.banker_prof": "Banker",
 
-  "screen.koronaswiat.wand": "Magic staff"
+  "screen.koronaswiat.wand": "Magic staff",
+
+  "tooltip.koronaswiat.anduril": "If you're attacking by swing attack, there is an chance that target will be §lstuned§r",
+  "tooltip.koronaswiat.soul_pickaxe": "You can use this item when holding §9ALT§r. It will consume an §oSoul in a bottle§r and the pickaxe will be more powerfull than normal",
+  "tooltip.koronaswiat.shift": "Hold §eSHIFT§r for more information",
+
+  "text.koronaswiat.stun_text": "You're stuned!"
+
 }

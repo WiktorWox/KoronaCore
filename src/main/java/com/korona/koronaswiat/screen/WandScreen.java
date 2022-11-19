@@ -13,8 +13,8 @@ public class WandScreen extends ContainerScreen<WandContainer> {
     private final ResourceLocation GUI = new ResourceLocation(KoronaSwiat.MOD_ID,
             "textures/gui/wand_gui.png");
 
-    public WandScreen(WandContainer p_i51105_1_, PlayerInventory p_i51105_2_, ITextComponent p_i51105_3_) {
-        super(p_i51105_1_, p_i51105_2_, p_i51105_3_);
+    public WandScreen(WandContainer wandContainer, PlayerInventory playerInventory, ITextComponent iTextComponent) {
+        super(wandContainer, playerInventory, iTextComponent);
     }
 
     @Override

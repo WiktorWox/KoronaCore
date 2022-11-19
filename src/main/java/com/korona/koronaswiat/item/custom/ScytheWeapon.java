@@ -12,15 +12,17 @@ import net.minecraft.potion.Effects;
 
 public class ScytheWeapon extends SwordItem {
     public ScytheWeapon(Properties properties) {
-        super(ModItemTier.SCYTHE, 0, 10f, properties);
+        super(ModItemTier.SCYTHE, 0, -2.0F, properties);
     }
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         // Here we can add effects on hit with this weapon to the target
-        attacker.level.playSound((PlayerEntity)null, attacker.getX(), attacker.getY(), attacker.getZ(), ModSoundEvent.ITEM_SCYTHE_HIT.get(), SoundCategory.PLAYERS, 18, 1);
-        attacker.addEffect(new EffectInstance(Effects.HEAL, 20, 2));
-        target.addEffect(new EffectInstance(Effects.WITHER, 100, 1));
+        if (attacker.swingTime == 0) {
+            attacker.level.playSound((PlayerEntity) null, attacker.getX(), attacker.getY(), attacker.getZ(), ModSoundEvent.ITEM_SCYTHE_HIT.get(), SoundCategory.PLAYERS, 18, 1);
+            attacker.addEffect(new EffectInstance(Effects.HEAL, 20, 2));
+            target.addEffect(new EffectInstance(Effects.WITHER, 100, 1));
+        }
         return super.hurtEnemy(stack, target, attacker);
     }
 }

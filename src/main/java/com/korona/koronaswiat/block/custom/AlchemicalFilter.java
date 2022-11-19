@@ -68,7 +68,7 @@ public class AlchemicalFilter extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-    return ModTileEntities.WAND_TILE.get().create();
+           return ModTileEntities.WAND_TILE.get().create();
     }
 
     @Override
