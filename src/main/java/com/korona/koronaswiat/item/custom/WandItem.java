@@ -45,6 +45,8 @@ public class WandItem extends Item implements ICapabilityProvider {
 
     public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
+        KoronaSwiat.LOGGER.info("Item!");
+        KoronaSwiat.LOGGER.info(player.inventory);
         Minecraft.getInstance().setScreen(new WandScreen( new WandContainer(player.getId(), world, player.blockPosition(), player.inventory, player), player.inventory, new TranslationTextComponent("screen.koronaswiat.wand")));
 //        openGui(((ServerPlayerEntity)player), new INamedContainerProvider()  {
 //            @Override
@@ -55,7 +57,7 @@ public class WandItem extends Item implements ICapabilityProvider {
 //            @Nullable
 //            @Override
 //            public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-//                return new WandContainer(i, world, player.blockPosition(), playerInventory, playerEntity);
+//                return new WandContainer(i, world, player.blockPosition(), player.inventory, playerEntity);
 //            }
 //        });
         return ActionResult.success(itemstack);

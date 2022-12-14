@@ -1,0 +1,25 @@
+
+{
+  "loader": "forge:separate-perspective",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "koronaswiat:item/banner/regeneration_banner"
+    }
+  },
+  "perspectives": {
+    "first_person_right_hand": {
+      "parent": "koronaswiat:item/banner"
+    },
+    "third_person_right_hand": {
+      "parent": "koronaswiat:item/banner"
+    },
+    "first_person_left_hand": {
+      "parent": "koronaswiat:item/banner_left_hand"
+    },
+    "third_person_left_hand": {
+      "parent": "koronaswiat:item/banner_left_hand"
+    }
+  }
+}

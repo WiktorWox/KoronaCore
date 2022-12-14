@@ -2,6 +2,7 @@ package com.korona.koronaswiat.block;
 
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.block.custom.AlchemicalFilter;
+import com.korona.koronaswiat.block.custom.BannerStand;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -25,6 +26,9 @@ public class ModBlocks {
             () -> new AlchemicalFilter(AbstractBlock.Properties.of(Material.DECORATION)
                     .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
 
+    public static final RegistryObject<Block> BANNER_STAND = registerBlock("banner_stand",
+            () -> new BannerStand(AbstractBlock.Properties.of(Material.DECORATION)
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

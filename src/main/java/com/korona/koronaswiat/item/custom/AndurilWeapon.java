@@ -41,7 +41,6 @@ public class AndurilWeapon extends SwordItem {
         if (attacker.swingTime == 0) {
             int int_random = randomNumber.nextInt(8);
             if (int_random == 0) {
-                source.getCommands().performCommand(source.createCommandSourceStack(), "title " + attacker.getName().getString() + " title \"" + new TranslationTextComponent("text.koronaswiat.stun_text").getString() + "\"");
                 source.getCommands().performCommand(source.createCommandSourceStack(), "title " + target.getName().getString() + " title \"" + new TranslationTextComponent("text.koronaswiat.stun_text").getString() + "\"");
                 target.addEffect(new EffectInstance(Effects.BLINDNESS, 30, 1, true, true));
                 target.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 30, 5, true, true));

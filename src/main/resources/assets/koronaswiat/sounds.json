@@ -6,5 +6,33 @@
     "sounds": [
       "koronaswiat:item_scythe_hit"
     ]
+  },
+  "item_soul_pickaxe_charge": {
+    "category": "players",
+    "subtitle": "koronaswiat.item_soul_pickaxe_charge",
+    "sounds": [
+      "koronaswiat:soul_pickaxe/charge/soul_pickaxe1",
+      "koronaswiat:soul_pickaxe/charge/soul_pickaxe2",
+      "koronaswiat:soul_pickaxe/charge/soul_pickaxe3",
+      "koronaswiat:soul_pickaxe/charge/soul_pickaxe4"
+    ]
+  },
+  "item_soul_pickaxe_discharge": {
+    "category": "players",
+    "subtitle": "koronaswiat.item_soul_pickaxe_discharge",
+    "sounds": [
+      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe1",
+      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe2",
+      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe3",
+      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe4",
+      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe5"
+    ]
+  },
+  "item_banner": {
+    "category": "players",
+    "subtitle": "koronaswiat.item_banner",
+    "sounds": [
+      "koronaswiat:banner_sound"
+    ]
   }
 }

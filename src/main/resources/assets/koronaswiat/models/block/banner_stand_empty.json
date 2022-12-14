@@ -1,0 +1,42 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "koronaswiat:block/banner_stand/banner_stand_main",
+		"particle": "koronaswiat:block/banner_stand/banner_stand_main"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [8, 4, 16, 8], "texture": "#0"},
+				"east": {"uv": [8, 4, 16, 8], "texture": "#0"},
+				"south": {"uv": [8, 4, 16, 8], "texture": "#0"},
+				"west": {"uv": [8, 4, 16, 8], "texture": "#0"},
+				"up": {"uv": [8, 8, 0, 0], "texture": "#0"},
+				"down": {"uv": [8, 0, 0, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 8, 4],
+			"to": [12, 10, 12],
+			"faces": {
+				"north": {"uv": [8, 12, 12, 13], "texture": "#0"},
+				"east": {"uv": [8, 13, 12, 14], "texture": "#0"},
+				"south": {"uv": [12, 12, 16, 13], "texture": "#0"},
+				"west": {"uv": [12, 13, 16, 14], "texture": "#0"},
+				"up": {"uv": [16, 12, 12, 8], "texture": "#0"},
+				"down": {"uv": [12, 8, 8, 12], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-1, 0, 0]
+		}
+	},
+	"overrides": [
+		{"predicate": {"custom_model_data":2}, "model": "koronaswiat:block/banner_stand_regeneration"}
+	]
+}

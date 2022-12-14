@@ -1,10 +1,13 @@
 {
+  "itemGroup.magicAccessoriesModTab": "Magiczne akcesoria",
+
   "item.koronaswiat.coronacoin": "KoronaCoin",
   "item.koronaswiat.megacoronacoin": "MegaKoronaCoin",
   "item.koronaswiat.strange_bread": "Dziwny chleb",
   "item.koronaswiat.soul": "Dusza w butelce",
   "item.koronaswiat.soul_sand_dust": "Proszek z piasku dusz",
   "item.koronaswiat.soul_ingot": "Sztabka dusz",
+  "item.koronaswiat.soul_pickaxe": "Kilof dusz",
 
   "item.koronaswiat.tea_green": "Zielona herbata",
   "item.koronaswiat.tea_earl_grey": "Earl grey",
@@ -14,13 +17,17 @@
   "item.koronaswiat.scythe": "Kosa ponurego żniwiarza",
   "item.koronaswiat.anduril": "Andúril",
   "item.koronaswiat.wand": "Magiczna laska",
+  "item.koronaswiat.regeneration_banner": "Sztandar wspieracza (regeneracji)",
 
   "entity.minecraft.villager.koronaswiat.banker_prof": "Bankier",
 
   "screen.koronaswiat.wand": "Magiczna laska",
+  "screen.koronaswiat.alchemical_filter": "Sito alchemiczne",
 
   "tooltip.koronaswiat.anduril": "Jeśli zaatakujesz używając tzw. naładowanego ataku, jest szansa, że przeciwnik zostanie §logłuszony§r",
   "tooltip.koronaswiat.soul_pickaxe": "Możesz użyć tego przedmiotu trzymając §9ALT§r. Wtedy kilof zużyje §oDuszę w butelce§r, ale także będzie o wiele potężniejszy",
+  "tooltip.koronaswiat.soul_pickaxe.charged": "Kilof dusz jest §enaładowany§r. Pozostałe bloki: §9",
+  "tooltip.koronaswiat.soul_pickaxe.time": " bloków§r",
   "tooltip.koronaswiat.shift": "Trzymaj §eSHIFT§r, aby dowiedzieć się więcej",
 
   "text.koronaswiat.stun_text": "Zostałeś ogłuszony!"

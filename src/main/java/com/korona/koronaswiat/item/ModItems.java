@@ -89,4 +89,10 @@ public class ModItems {
             "megacoronacoin",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> REGENERATION_BANNER = ITEMS.register(
+            "regeneration_banner",
+            () -> new BannerItem(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1), "minecraft:regeneration", 10, 1));
+
 }

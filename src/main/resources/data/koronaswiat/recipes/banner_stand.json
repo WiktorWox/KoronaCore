@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "kDk",
+        "BBB"
+    ],
+    "key": {
+        "k": {
+            "item": "koronaswiat:soul_ingot"
+        },
+        "D": {
+            "item": "minecraft:dropper"
+        },
+        "B": {
+            "item": "minecraft:basalt"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:banner_stand",
+        "count": 1
+    }
+}

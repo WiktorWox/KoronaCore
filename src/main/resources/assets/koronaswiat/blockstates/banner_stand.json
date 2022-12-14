@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "level=1": {
+      "model": "koronaswiat:block/banner_stand_empty"
+    },
+    "level=2": {
+      "model": "koronaswiat:block/banner_stand_regeneration"
+    }
+  }
+}

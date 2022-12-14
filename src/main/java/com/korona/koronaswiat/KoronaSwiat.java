@@ -1,16 +1,19 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
+import com.korona.koronaswiat.container.AlchemicalFilterContainer;
 import com.korona.koronaswiat.container.ModContainers;
 import com.korona.koronaswiat.container.WandContainer;
 import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.screen.AlchemicalFilterScreen;
 import com.korona.koronaswiat.screen.WandScreen;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.util.ModSoundEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -72,6 +75,12 @@ public class KoronaSwiat {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        LOGGER.info("=====  .-===-.  .-===-.                         ||          ||  ");
+        LOGGER.info("  |    |     |  |     '                         ||        ''||''");
+        LOGGER.info("  |    |     |  '-===-.  ||   ||  |.:::.   .:::.||  .:::.|| ||    .:::.");
+        LOGGER.info("  |    |     |        |  ||   ||  ||   || ||   ||| ||   ||| ||   ||---'");
+        LOGGER.info("=====  '-===-'  '-===-'  '|:::|'| ||:::'   ':::'||  ':::'||  '::  ':::'");
+        LOGGER.info("                                  ||");
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -80,6 +89,8 @@ public class KoronaSwiat {
         event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
                     WandScreen::new);
+            ScreenManager.register(ModContainers.ALCHEMICAL_FILTER_CONTAINER.get(),
+                    AlchemicalFilterScreen::new);
         });
     }
 
