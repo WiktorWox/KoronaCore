@@ -1,15 +1,11 @@
 package com.korona.koronaswiat.container;
 
-import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.block.ModBlocks;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
@@ -19,13 +15,13 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class AlchemicalFilterContainer extends Container {
+public class UpgradeContainerContainer extends Container {
     public final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
     public final BlockPos pos;
-    public AlchemicalFilterContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
-        super(ModContainers.ALCHEMICAL_FILTER_CONTAINER.get(), windowId);
+    public UpgradeContainerContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
+        super(ModContainers.UPGRADE_CONTAINER_CONTAINER.get(), windowId);
         this.tileEntity = world.getBlockEntity(pos);
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
@@ -34,9 +30,11 @@ public class AlchemicalFilterContainer extends Container {
 
         if (tileEntity != null) {
             this.tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
-                addSlot(new SlotItemHandler(h, 0, 44, 42));
-                addSlot(new SlotItemHandler(h, 1, 80, 26));
-                addSlot(new SlotItemHandler(h, 2, 80, 59));
+                addSlot(new SlotItemHandler(h, 0, 44, 26));
+                addSlot(new SlotItemHandler(h, 1, 62, 26));
+                addSlot(new SlotItemHandler(h, 2, 80, 26));
+                addSlot(new SlotItemHandler(h, 3, 98, 26));
+                addSlot(new SlotItemHandler(h, 4, 116, 26));
             });
         }
     }
@@ -44,7 +42,7 @@ public class AlchemicalFilterContainer extends Container {
     @Override
     public boolean stillValid(PlayerEntity player) {
         return stillValid(IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos()),
-                player, ModBlocks.ALCHEMICAL_FILTER.get());
+                player, ModBlocks.UPGRADE_CONTAINER.get());
     }
 
     private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
@@ -89,7 +87,7 @@ public class AlchemicalFilterContainer extends Container {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
+    private static final int TE_INVENTORY_SLOT_COUNT = 5;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
 
     @Override
     public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {

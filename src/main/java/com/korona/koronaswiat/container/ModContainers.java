@@ -32,6 +32,14 @@ public class ModContainers {
                 return new AlchemicalFilterContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<UpgradeContainerContainer>> UPGRADE_CONTAINER_CONTAINER
+            = CONTAINERS.register("upgrade_container_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.level;
+                return new UpgradeContainerContainer(windowId, world, pos, inv, inv.player);
+            })));
+
     public static void register(IEventBus eventBus) {
         CONTAINERS.register(eventBus);
     }

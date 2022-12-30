@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "koronaswiat:block/upgrade_container",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "koronaswiat:block/upgrade_container",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "koronaswiat:block/upgrade_container",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "koronaswiat:block/upgrade_container"
+    }
+  }
+}

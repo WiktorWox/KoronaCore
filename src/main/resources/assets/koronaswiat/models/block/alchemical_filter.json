@@ -1,11 +1,11 @@
 {
   "parent": "block/iron_block",
   "textures": {
-    "north": "block/alchemical_filter/alchemical_filter_side2",
-    "east": "block/alchemical_filter/alchemical_filter_front",
-    "south": "block/alchemical_filter/alchemical_filter_side1",
-    "west": "block/alchemical_filter/alchemical_filter_side1",
-    "up": "block/alchemical_filter/alchemical_filter_up",
-    "down": "block/alchemical_filter/alchemical_filter_down"
+    "north": "koronaswiat:block/alchemical_filter/alchemical_filter_side2",
+    "east": "koronaswiat:block/alchemical_filter/alchemical_filter_front",
+    "south": "koronaswiat:block/alchemical_filter/alchemical_filter_side1",
+    "west": "koronaswiat:block/alchemical_filter/alchemical_filter_side1",
+    "up": "koronaswiat:block/alchemical_filter/alchemical_filter_up",
+    "down": "koronaswiat:block/alchemical_filter/alchemical_filter_down"
   }
 }

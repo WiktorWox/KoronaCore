@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "koronaswiat:block/heart_of_the_base",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "koronaswiat:block/heart_of_the_base",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "koronaswiat:block/heart_of_the_base",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "koronaswiat:block/heart_of_the_base"
+    }
+  }
+}

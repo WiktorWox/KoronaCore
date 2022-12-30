@@ -8,6 +8,9 @@
   "item.koronaswiat.soul_sand_dust": "Proszek z piasku dusz",
   "item.koronaswiat.soul_ingot": "Sztabka dusz",
   "item.koronaswiat.soul_pickaxe": "Kilof dusz",
+  "item.koronaswiat.stone_minas_neuma_crystal": "Kryształ Minas Neuma",
+  "item.koronaswiat.stone_necromancy": "Kryształ nekromancji",
+  "item.koronaswiat.stone_necromancy_upgraded": "Ulepszony kryształ nekromancji",
 
   "item.koronaswiat.tea_green": "Zielona herbata",
   "item.koronaswiat.tea_earl_grey": "Earl grey",
@@ -19,10 +22,16 @@
   "item.koronaswiat.wand": "Magiczna laska",
   "item.koronaswiat.regeneration_banner": "Sztandar wspieracza (regeneracji)",
 
+  "block.koronaswiat.upgrade_container": "Pojemnik na ulepszenia",
+  "block.koronaswiat.banner_stand": "Stojak na sztandar",
+  "block.koronaswiat.alchemical_filter": "Sito alchemiczne",
+  "block.koronaswiat.heart_of_the_base": "Serce bazy",
+
   "entity.minecraft.villager.koronaswiat.banker_prof": "Bankier",
 
   "screen.koronaswiat.wand": "Magiczna laska",
   "screen.koronaswiat.alchemical_filter": "Sito alchemiczne",
+  "screen.koronaswiat.upgrade_container": "Pojemnik na ulepszenia",
 
   "tooltip.koronaswiat.anduril": "Jeśli zaatakujesz używając tzw. naładowanego ataku, jest szansa, że przeciwnik zostanie §logłuszony§r",
   "tooltip.koronaswiat.soul_pickaxe": "Możesz użyć tego przedmiotu trzymając §9ALT§r. Wtedy kilof zużyje §oDuszę w butelce§r, ale także będzie o wiele potężniejszy",
@@ -30,5 +39,7 @@
   "tooltip.koronaswiat.soul_pickaxe.time": " bloków§r",
   "tooltip.koronaswiat.shift": "Trzymaj §eSHIFT§r, aby dowiedzieć się więcej",
 
-  "text.koronaswiat.stun_text": "Zostałeś ogłuszony!"
+  "text.koronaswiat.stun_text": "Zostałeś ogłuszony!",
+
+  "message.heart.wrong_name": "Serce bazy o nazwie %s już istnieje! Zmień jego nazwę z użyciem kowadła"
 }

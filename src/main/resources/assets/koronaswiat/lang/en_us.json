@@ -3,11 +3,14 @@
 
   "item.koronaswiat.coronacoin": "CoronaCoin",
   "item.koronaswiat.megacoronacoin": "MegaCoronaCoin",
+  "item.koronaswiat.stone_minas_neuma_crystal": "Minas Neuma crystal",
   "item.koronaswiat.strange_bread": "Strange bread",
   "item.koronaswiat.soul": "Soul in the bottle",
   "item.koronaswiat.soul_sand_dust": "Soul sand dust",
   "item.koronaswiat.soul_ingot": "Soul ingot",
   "item.koronaswiat.soul_pickaxe": "Soul pickaxe",
+  "item.koronaswiat.stone_necromancy": "Necromancy crystal",
+  "item.koronaswiat.stone_necromancy_upgraded": "Upgraded necromancy crystal",
 
   "item.koronaswiat.tea_green": "Green tea",
   "item.koronaswiat.tea_earl_grey": "Earl grey",
@@ -19,10 +22,16 @@
   "item.koronaswiat.wand": "Magic staff",
   "item.koronaswiat.regeneration_banner": "Supporter's banner (regeneration)",
 
+  "block.koronaswiat.upgrade_container": "Upgrade container",
+  "block.koronaswiat.banner_stand": "Banner stand",
+  "block.koronaswiat.alchemical_filter": "Alchemical filter",
+  "block.koronaswiat.heart_of_the_base": "Heart of the base",
+
   "entity.minecraft.villager.koronaswiat.banker_prof": "Banker",
 
   "screen.koronaswiat.wand": "Magic staff",
   "screen.koronaswiat.alchemical_filter": "Achemical filter",
+  "screen.koronaswiat.upgrade_container": "Upgrade container",
 
   "tooltip.koronaswiat.anduril": "If you're attacking by swing attack, there is an chance that target will be §lstuned§r",
   "tooltip.koronaswiat.soul_pickaxe": "You can use this item when holding §9ALT§r. It will consume an §oSoul in a bottle§r and the pickaxe will be more powerful than normal",
@@ -30,6 +39,9 @@
   "tooltip.koronaswiat.soul_pickaxe.time": " blocks§r",
   "tooltip.koronaswiat.shift": "Hold §eSHIFT§r for more information",
 
-  "text.koronaswiat.stun_text": "You're stuned!"
+  "text.koronaswiat.stun_text": "You're stuned!",
+
+  "message.heart.wrong_name": "Heart of the base with a %s name is already on the world! Change it with anvil"
+
 
 }

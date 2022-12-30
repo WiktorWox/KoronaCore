@@ -114,9 +114,14 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
+//    implementation 'com.github.Z0rdak:WorldProtector:1.16.5-2.1.9.1'
+//    implementation group: 'org.bukkit', name: 'bukkit', version: '1.7.9-R0.1-SNAPSHOT'
+//    implementation 'com.sk89q:worldedit:7.2.2'
+    implementation fg.deobf('fr.mosca421:worldprotector:1.16.3-2.1.9.1')
+//    implementation fg.deobf(curse.maven:)
+
     implementation 'village:village:2.0'
     implementation 'merchant:merchant:0.1.4'
-
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
@@ -127,13 +132,14 @@ dependencies {
     // compile "some.group:artifact:version"
 
     // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+//     implementation 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+//    implementation 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 
-    // These dependencies get remapped to your current MCP mappings
+    // These  dependenciesget remapped to your current MCP mappings
+//     deobf 'fr.mosca421:worldprotector:1.16.3-2.1.9.1'
     // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 //    deobf 'me.shedaniel.architectury.mixin.forge:'
 
@@ -179,8 +185,18 @@ publishing {
 
 repositories {
     mavenCentral()
+    flatDir name: 'libs', dirs: 'libs'
     maven {
         url 'https://repo.clojars.org'
         name 'Clojars'
+    }
+    maven {
+        url 'https://cursemaven.com'
+        content{
+            includeGroup 'curse.maven'
+        }
+    }
+    maven {
+        url 'https://jitpack.io'
     }
 }

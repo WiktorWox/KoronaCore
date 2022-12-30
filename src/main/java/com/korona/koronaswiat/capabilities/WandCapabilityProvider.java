@@ -1,8 +1,8 @@
 package com.korona.koronaswiat.capabilities;
 
-import net.minecraft.item.Item;
+import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
@@ -16,12 +16,11 @@ import javax.annotation.Nonnull;
 
 public class WandCapabilityProvider implements ICapabilitySerializable<INBT> {
 
-    // BackpackItemStackHandler is just an extension of ItemStackHandler which makes sure no Backpack can be put in the inventory
-    private ItemStackHandler itemHandler = createHandler();
+    public ItemStackHandler itemHandler = createHandler();
 
     // This instantiates the Inventory only when it is first requested, and then caches it
     @Nonnull
-    private ItemStackHandler getCachedInventory() {
+    public ItemStackHandler getCachedInventory() {
         if (itemHandler == null) {
             itemHandler = new ItemStackHandler();
         }
@@ -40,10 +39,7 @@ public class WandCapabilityProvider implements ICapabilitySerializable<INBT> {
 
             @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-                switch (slot) {
-                    case 0: return stack.getItem() == Items.COBBLESTONE;
-                    default: return false;
-                }
+                return stack.getItem() == ModItems.STONE_MINAS_NEUMA_CRYSTAL.get() || stack.getItem() == ModItems.STONE_NECROMANCY.get() || stack.getItem() == ModItems.STONE_NECROMANCY_UPGRADED.get();
             }
 
             @Override

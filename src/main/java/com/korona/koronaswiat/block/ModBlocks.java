@@ -3,6 +3,8 @@ package com.korona.koronaswiat.block;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.block.custom.AlchemicalFilter;
 import com.korona.koronaswiat.block.custom.BannerStand;
+import com.korona.koronaswiat.block.custom.HeartOfTheBase;
+import com.korona.koronaswiat.block.custom.UpgadeContainer;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -24,11 +26,19 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ALCHEMICAL_FILTER = registerBlock("alchemical_filter",
             () -> new AlchemicalFilter(AbstractBlock.Properties.of(Material.DECORATION)
-                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f).noOcclusion()));
 
     public static final RegistryObject<Block> BANNER_STAND = registerBlock("banner_stand",
             () -> new BannerStand(AbstractBlock.Properties.of(Material.DECORATION)
-                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f)));
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f).noOcclusion()));
+
+    public static final RegistryObject<Block> UPGRADE_CONTAINER = registerBlock("upgrade_container",
+            () -> new UpgadeContainer(AbstractBlock.Properties.of(Material.DECORATION)
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f).noOcclusion()));
+
+    public static final RegistryObject<Block> HEART_OF_THE_BASE = registerBlock("heart_of_the_base",
+            () -> new HeartOfTheBase(AbstractBlock.Properties.of(Material.DECORATION)
+                    .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

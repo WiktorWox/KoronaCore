@@ -1,0 +1,11 @@
+{
+  "parent": "block/cobblestone",
+  "textures": {
+    "north": "koronaswiat:block/upgrade_container/north",
+    "east": "koronaswiat:block/upgrade_container/east",
+    "south": "koronaswiat:block/upgrade_container/south",
+    "west": "koronaswiat:block/upgrade_container/west",
+    "up": "koronaswiat:block/upgrade_container/up_closed",
+    "down": "koronaswiat:block/upgrade_container/down"
+  }
+}

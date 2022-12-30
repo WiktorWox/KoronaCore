@@ -1,30 +1,29 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
-import com.korona.koronaswiat.container.AlchemicalFilterContainer;
 import com.korona.koronaswiat.container.ModContainers;
-import com.korona.koronaswiat.container.WandContainer;
 import com.korona.koronaswiat.entity.Villager;
+import com.korona.koronaswiat.guis.WandGui;
 import com.korona.koronaswiat.item.ModItems;
 import com.korona.koronaswiat.screen.AlchemicalFilterScreen;
+import com.korona.koronaswiat.screen.UpgradeContainerScreen;
 import com.korona.koronaswiat.screen.WandScreen;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.util.ModSoundEvent;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -33,6 +32,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.GameData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -55,6 +55,7 @@ public class KoronaSwiat {
         ModContainers.register((eventBus));
         Villager.VILLAGER_PROFESSION.register(eventBus);
         Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
+        MinecraftForge.EVENT_BUS.register(new WandGui());
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -91,6 +92,9 @@ public class KoronaSwiat {
                     WandScreen::new);
             ScreenManager.register(ModContainers.ALCHEMICAL_FILTER_CONTAINER.get(),
                     AlchemicalFilterScreen::new);
+            ScreenManager.register(ModContainers.UPGRADE_CONTAINER_CONTAINER.get(),
+                    UpgradeContainerScreen::new);
+            RenderTypeLookup.setRenderLayer(ModBlocks.BANNER_STAND.get(), RenderType.cutout());
         });
     }
 

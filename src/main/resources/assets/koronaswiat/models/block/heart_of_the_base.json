@@ -1,0 +1,11 @@
+{
+  "parent": "block/cobblestone",
+  "textures": {
+    "north": "koronaswiat:block/heart_of_the_base/north",
+    "east": "koronaswiat:block/heart_of_the_base/east",
+    "south": "koronaswiat:block/heart_of_the_base/south",
+    "west": "koronaswiat:block/heart_of_the_base/west",
+    "up": "koronaswiat:block/heart_of_the_base/up",
+    "down": "koronaswiat:block/heart_of_the_base/down"
+  }
+}
