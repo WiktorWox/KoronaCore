@@ -1,7 +1,9 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.item.custom.*;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -89,10 +91,30 @@ public class ModItems {
             "megacoronacoin",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
+
+    public static final RegistryObject<Item> STONE_MINAS_NEUMA_CRYSTAL = ITEMS.register(
+            "stone_minas_neuma_crystal",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> STONE_NECROMANCY = ITEMS.register(
+            "stone_necromancy",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> STONE_NECROMANCY_UPGRADED = ITEMS.register(
+            "stone_necromancy_upgraded",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1)));
     public static final RegistryObject<Item> REGENERATION_BANNER = ITEMS.register(
             "regeneration_banner",
             () -> new BannerItem(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1), "minecraft:regeneration", 10, 1));
-
+//    public static final RegistryObject<Item> HEART_OF_THE_BASE = ITEMS.register(
+//            "heart_of_the_base",
+//            () -> new BlockItem(ModBlocks.HEART_OF_THE_BASE.get(), new Item.Properties()
+//                    .tab(ItemGroup.TAB_DECORATIONS)
+//                    .stacksTo(1)));
 }

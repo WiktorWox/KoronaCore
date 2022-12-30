@@ -21,15 +21,15 @@ public class WandContainer extends Container {
         super(ModContainers.WAND_CONTAINER.get(), windowId);
         this.wandItemStack = player.getMainHandItem();
         playerEntity = player;
-        this.playerInventory = new InvWrapper(playerInventory);
+        this.playerInventory = new InvWrapper((playerInventory));
         KoronaSwiat.LOGGER.info(this.playerInventory.getStackInSlot(0));
         layoutPlayerInventorySlots(8, 84);
 
-//        this.wandItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
-//            addSlot(new SlotItemHandler(h, 0, 62, 44));
-//            addSlot(new SlotItemHandler(h, 1, 80, 44));
-//            addSlot(new SlotItemHandler(h, 2, 98, 44));
-//        });
+        this.wandItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
+            addSlot(new SlotItemHandler(h, 0, 62, 44));
+            addSlot(new SlotItemHandler(h, 1, 80, 44));
+            addSlot(new SlotItemHandler(h, 2, 98, 44));
+        });
     }
 
     @Override
@@ -57,10 +57,10 @@ public class WandContainer extends Container {
     }
 
     private void layoutPlayerInventorySlots(int leftCol, int topRow) {
-        addSlotBox(this.playerInventory, 0, leftCol, topRow, 9, 18, 3, 18);
+        addSlotBox(this.playerInventory, 9, leftCol, topRow, 9, 18, 3, 18);
 
-//        topRow += 58;
-//        addSlotRange(this.playerInventory, 0, leftCol, topRow, 9, 18);
+        topRow += 58;
+        addSlotRange(this.playerInventory, 0, leftCol, topRow, 9, 18);
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -79,7 +79,7 @@ public class WandContainer extends Container {
     private static final int ISH_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int ISH_INVENTORY_SLOT_COUNT = 0;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
+    private static final int ISH_INVENTORY_SLOT_COUNT = 3;  // must match TileEntityInventoryBasic.NUMBER_OF_SLOTS
 
     @Override
     public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {
