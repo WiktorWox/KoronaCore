@@ -77,7 +77,7 @@ All of the features are accurately described on [this site](https://wiktorwox.wi
 ### [WorldProtector](https://www.curseforge.com/minecraft/mc-mods/worldprotector) by [Mosca42](https://www.youtube.com/c/Mosca4210/videos) (by [z0rdak](https://github.com/Z0rdak) for our Minecraft version)
 We used his mod to create *heart of the base*. We are grateful that he made it so simple and clear that we could easily use its classes and methods
 
-- [Licence](https://creativecommons.org/licenses/by-nc/3.0/) - Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
+- [License](https://creativecommons.org/licenses/by-nc/3.0/) - Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
 
 <img src="https://user-images.githubusercontent.com/77573493/210118716-528acd82-51ef-4c3e-9873-702cccfb99fb.png" width="100">
 
@@ -86,6 +86,6 @@ We used his mod to create *heart of the base*. We are grateful that he made it s
 ### [Bandles plus](https://www.curseforge.com/minecraft/mc-mods/bundles-plus) by [adox123](https://www.curseforge.com/members/adox123/followers)
 You can buy a bundle with banker villager to keep your items in it!
 
-- [Licence](https://opensource.org/licenses/MIT) - The MIT License
+- [License](https://opensource.org/licenses/MIT) - The MIT License
 
 <img src="https://user-images.githubusercontent.com/77573493/210118807-9e3d93c6-824b-49e3-8f0f-20445b760954.png" width="100">
