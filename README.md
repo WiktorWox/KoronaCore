@@ -1,3 +1,4 @@
+![KoronaCore](https://user-images.githubusercontent.com/77573493/210120188-ddc17245-0d98-4010-b9aa-d7a61017ced5.png)
 # Introduction
 **KoronaCore** is *Minecraft: Java edition* mod for KoronaŚwiat /kɔrɔna ʑviat/ (*from Polish: KoronaWorld*) server. Mod already appeared on *Bedrock edition* as addon, 
 but less developed due to platform limitations. The server also have own story made by author and players.
