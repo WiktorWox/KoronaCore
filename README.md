@@ -89,3 +89,8 @@ You can buy a bundle with banker villager to keep your items in it!
 - [License](https://opensource.org/licenses/MIT) - The MIT License
 
 <img src="https://user-images.githubusercontent.com/77573493/210118807-9e3d93c6-824b-49e3-8f0f-20445b760954.png" width="100">
+
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
