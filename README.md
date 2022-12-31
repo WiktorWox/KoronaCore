@@ -14,7 +14,7 @@ things that diversify the gameplay, such as new weapons, items, [archivements](h
 ### WiktorWox
 
 The main mod and server developer and story creator is young programmer from Poland - [**WiktorWox**](https://www.youtube.com/channel/UCPzSaKohpaC-vPd7XEdaKKg), 
-who made all what you see right now. But he is not giver of ideas.
+who made all what you see right now. But he is not only giver of ideas.
 
 <img src="https://user-images.githubusercontent.com/77573493/210116761-b6e7a95b-f3c3-401d-8981-986ff9a660c2.gif" width="200">
 
