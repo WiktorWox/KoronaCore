@@ -47,19 +47,19 @@ All of the features are accurately described on [this site](https://wiktorwox.wi
 - **KoronaCoin** - The currency on the server
 - **MegaCoronacoin** - 64 of it exchanged with banker villager
 - **Soul sand dust** - Powdered soul sand
-- **Soul in a bottle** - Soul sand powder essence
-- **Strange bread** - The first crafted item, something like a server joke
+- **Soul in a bottle** - Soul sand dust essence
+- **Strange bread** - The first created item, something like a server joke
 - **Soul ingot** - Pressed souls with metals
 - **Banners** - Enchanted banners with grate powers
 - **Tea** - New drink item
 - **Anduril** - New weapon, LOTR reference
 - **Grim reaper's scythe**
 - **Magic staff** - An item into which you can insert magic stones to change its power
-- **Soul pickaxe** - A pickaxe, with you can charge with souls to make it stronger
+- **Soul pickaxe** - A pickaxe, which you can charge with souls to make it stronger
 
 ### Blocks
 - **Alchemical filter** - A crafting block where you cam make soul in a bottle
-- **Heart of the base** - Place it in your base to protect it! [*To protect the base we used **WorldProtector** mod]
+- **Heart of the base** - Place it in your base to protect it! [*To protect the base we used **WorldProtector** mod*]
 - **Upgrade container** - A block that, if connected to the heart of the base, will upgrade it
 - **Banner stand** - If connected with heart of base, can use banner powers on it's range
 
