@@ -1,7 +1,11 @@
 package com.korona.koronaswiat.block.custom;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.block.ModBlocks;
+import com.korona.koronaswiat.container.HeartOfTheBaseContainer;
 import com.korona.koronaswiat.container.UpgradeContainerContainer;
+import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.tileentity.HeartOfTheBaseTile;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.tileentity.UpgradeContainerTile;
 import fr.mosca421.worldprotector.core.IRegion;
@@ -11,6 +15,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -63,40 +69,45 @@ public class HeartOfTheBase extends HorizontalBlock {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
-    //Gdy blok zostanie postawiony
     public void setPlacedBy(World world, BlockPos blockPos, BlockState blockState, @Nullable LivingEntity player, ItemStack itemStack) {
         KoronaSwiat.LOGGER.info(RegionManager.get().getRegion("[nwm]"));
         String heartName = itemStack.getDisplayName().getString();
+        //If there is no Region with name from item
         if (!RegionManager.get().containsRegion(heartName)) {
-            if (world.isClientSide) {
+            if (!world.isClientSide) {
                 TileEntity tileEntity = world.getBlockEntity(blockPos);
+                //We are saving a name of block owner and name of the block item
                 tileEntity.getTileData().putString("player_owner", player.getName().getString());
                 tileEntity.getTileData().putString("heart_name", heartName);
-                //Wyznaczamy dwa wierzchołki naszego obrszaru
+                //Determining vertex of our Region area
                 BlockPos pos1 = new BlockPos(blockPos.getX() + 4, blockPos.getY() + 4, blockPos.getZ() + 4);
                 BlockPos pos2 = new BlockPos(blockPos.getX() - 4, blockPos.getY() - 4, blockPos.getZ() - 4);
-                //Tworzymy Region(nazwa, obszar, wymiar)
+                //We are makin' Region(name, area, dimension)
                 Region heartRegion = new Region(itemStack.getDisplayName().getString(), new AxisAlignedBB(pos1, pos2), world.dimension());
-                //Dodajemy znacznik nie pozwalający na niszczenie i budowanie
+                //We are adding flags that make a zone protected from destruction and placing blocks
                 heartRegion.addFlag("break");
                 heartRegion.addFlag("place");
-                //Dodajemy gracza na którego nie działają znaczniki
+                //We are adding flag-resistant players
                 heartRegion.addPlayer((PlayerEntity) player);
-                //Rejestrujemy region
+                //We are registering a Region
                 RegionManager.get().addRegion(heartRegion);
             }
         } else {
             if (!world.isClientSide) {
+                //Send warning message
                 player.sendMessage(new TranslationTextComponent("message.heart.wrong_name", heartName), player.getUUID());
+                //Destroy block
                 world.destroyBlock(blockPos, false);
+                //Drop block item
+                InventoryHelper.dropItemStack(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModBlocks.HEART_OF_THE_BASE.get().asItem()));
             }
         }
     }
 
     public void onRemove(BlockState blockState, World world, BlockPos blockPos, BlockState blockState1, boolean b) {
         TileEntity tileentity = world.getBlockEntity(blockPos);
+        //We are removing a region with block item name from the world
         RegionManager.get().removeRegion(tileentity.getTileData().getString("heart_name"));
-        KoronaSwiat.LOGGER.info(tileentity.getTileData().getString("heart_name"));
         super.onRemove(blockState, world, blockPos, blockState1, b);
     }
 
