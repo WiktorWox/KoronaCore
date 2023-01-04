@@ -107,14 +107,24 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1)));
+    public static final RegistryObject<Item> RUNESTONE_BLUE = ITEMS.register(
+            "runestone_blue",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(16)));
+    public static final RegistryObject<Item> RUNESTONE_PURPLE = ITEMS.register(
+            "runestone_purple",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(16)));
+    public static final RegistryObject<Item> RUNESTONE_RED = ITEMS.register(
+            "runestone_red",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(16)));
     public static final RegistryObject<Item> REGENERATION_BANNER = ITEMS.register(
             "regeneration_banner",
             () -> new BannerItem(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1), "minecraft:regeneration", 10, 1));
-//    public static final RegistryObject<Item> HEART_OF_THE_BASE = ITEMS.register(
-//            "heart_of_the_base",
-//            () -> new BlockItem(ModBlocks.HEART_OF_THE_BASE.get(), new Item.Properties()
-//                    .tab(ItemGroup.TAB_DECORATIONS)
-//                    .stacksTo(1)));
 }
