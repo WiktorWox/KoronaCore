@@ -40,6 +40,14 @@ public class ModContainers {
                 return new UpgradeContainerContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<HeartOfTheBaseContainer>> HEART_OF_THE_BASE_CONTAINER
+            = CONTAINERS.register("heart_of_the_base_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.level;
+                return new HeartOfTheBaseContainer(windowId, world, pos, inv, inv.player);
+            })));
+
     public static void register(IEventBus eventBus) {
         CONTAINERS.register(eventBus);
     }

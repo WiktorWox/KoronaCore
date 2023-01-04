@@ -1,11 +1,13 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
+import com.korona.koronaswiat.container.HeartOfTheBaseContainer;
 import com.korona.koronaswiat.container.ModContainers;
 import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.guis.WandGui;
 import com.korona.koronaswiat.item.ModItems;
 import com.korona.koronaswiat.screen.AlchemicalFilterScreen;
+import com.korona.koronaswiat.screen.HeartOfTheBaseScreen;
 import com.korona.koronaswiat.screen.UpgradeContainerScreen;
 import com.korona.koronaswiat.screen.WandScreen;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
@@ -90,6 +92,8 @@ public class KoronaSwiat {
         event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
                     WandScreen::new);
+            ScreenManager.register(ModContainers.HEART_OF_THE_BASE_CONTAINER.get(),
+                    HeartOfTheBaseScreen::new);
             ScreenManager.register(ModContainers.ALCHEMICAL_FILTER_CONTAINER.get(),
                     AlchemicalFilterScreen::new);
             ScreenManager.register(ModContainers.UPGRADE_CONTAINER_CONTAINER.get(),

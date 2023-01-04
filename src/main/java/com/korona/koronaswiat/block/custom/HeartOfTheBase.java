@@ -69,6 +69,43 @@ public class HeartOfTheBase extends HorizontalBlock {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
+    @Override
+    public ActionResultType use(BlockState state, World worldIn, BlockPos pos,
+                                PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        if(!worldIn.isClientSide()) {
+            TileEntity tileEntity = worldIn.getBlockEntity(pos);
+
+            if(!player.isCrouching()) {
+                if(tileEntity instanceof HeartOfTheBaseTile) {
+                    INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
+                    //We are openning a heart gui
+                    NetworkHooks.openGui(((ServerPlayerEntity)player), containerProvider, tileEntity.getBlockPos());
+                } else {
+                    throw new IllegalStateException("Our Container provider is missing!");
+                }
+            } else {
+                if(tileEntity instanceof HeartOfTheBaseTile) {
+                }
+            }
+        }
+        return ActionResultType.SUCCESS;
+    }
+
+    private INamedContainerProvider createContainerProvider(World worldIn, BlockPos pos) {
+        return new INamedContainerProvider() {
+            @Override
+            public ITextComponent getDisplayName() {
+                return new TranslationTextComponent("screen.koronaswiat.heart_of_the_base", worldIn.getBlockEntity(pos).getTileData().getString("heart_name"));
+            }
+
+            @Nullable
+            @Override
+            public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
+                return new HeartOfTheBaseContainer(i, worldIn, pos, playerInventory, playerEntity);
+            }
+        };
+    }
+
     public void setPlacedBy(World world, BlockPos blockPos, BlockState blockState, @Nullable LivingEntity player, ItemStack itemStack) {
         KoronaSwiat.LOGGER.info(RegionManager.get().getRegion("[nwm]"));
         String heartName = itemStack.getDisplayName().getString();
