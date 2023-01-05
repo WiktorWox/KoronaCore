@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#G#",
+        "BI#",
+        "SDS"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:cobblestone"
+        },
+        "G": {
+            "item": "minecraft:glass_pane"
+        },
+        "B": {
+            "item": "minecraft:bucket"
+        },
+        "I": {
+            "item": "minecraft:iron_bars"
+        },
+        "S": {
+            "item": "minecraft:smooth_stone"
+        },
+        "D": {
+            "item": "minecraft:dispenser"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:alchemical_filter",
+        "count": 1
+    }
+}
