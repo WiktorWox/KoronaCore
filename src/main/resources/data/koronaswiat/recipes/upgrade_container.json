@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "_I_",
+        "CMC",
+        "NSN"
+    ],
+    "key": {
+        "_": {
+            "item": "minecraft:polished_andesite_slab"
+        },
+        "I": {
+            "item": "minecraft:iron_trapdoor"
+        },
+        "C": {
+            "item": "minecraft:chiseled_stone_bricks"
+        },
+        "M": {
+            "item": "minecraft:chest"
+        },
+        "N": {
+            "item": "minecraft:mossy_stone_bricks"
+        },
+        "S": {
+            "item": "minecraft:smooth_stone"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:upgrade_container",
+        "count": 1
+    }
+}
