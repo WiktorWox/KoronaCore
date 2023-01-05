@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " L ",
+        "/  "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:dead_bush"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "/": {
+            "item": "minecraft:blaze_rod"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:wand",
+        "count": 1
+    }
+}
