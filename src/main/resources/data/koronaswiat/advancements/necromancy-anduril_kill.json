@@ -4,8 +4,9 @@
       "item": "koronaswiat:anduril"
     },
     "title": "Boskie uderzenie",
-    "description": "Zadaj wrogowi obrażenia ogłuszając go Andúrilem",
     "frame": "task",
+    "description": "Zadaj wrogowi obrażenia ogłuszając go Andúrilem dwa razy pod rząd.",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true
   },
@@ -17,7 +18,9 @@
         "entity": {
           "effects": {
             "minecraft:blindness": {
-              "visible": false
+              "duration": {
+                "min": 0.5
+              }
             }
           }
         },
