@@ -44,6 +44,7 @@
   "tooltip.koronaswiat.shift": "Hold §eSHIFT§r for more information",
 
   "text.koronaswiat.stun_text": "You're stuned!",
+  "text.koronaswiat.critical_hit": "Target had been stuned!",
 
   "message.heart.wrong_name": "Heart of the base with a %s name is already on the world! Change it with anvil"
 

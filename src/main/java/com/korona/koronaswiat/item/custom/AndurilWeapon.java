@@ -30,7 +30,7 @@ import java.util.*;
 
 public class AndurilWeapon extends SwordItem {
     public AndurilWeapon(Properties properties) {
-        super(ModItemTier.SOUL, 5, -2.5F, properties);
+        super(ModItemTier.SOUL, 3, -2.4F, properties);
     }
 
     @Override
@@ -41,10 +41,14 @@ public class AndurilWeapon extends SwordItem {
         if (attacker.swingTime == 0) {
             int int_random = randomNumber.nextInt(8);
             if (int_random == 0) {
+                // Logger
                 source.getCommands().performCommand(source.createCommandSourceStack(), "title " + target.getName().getString() + " title \"" + new TranslationTextComponent("text.koronaswiat.stun_text").getString() + "\"");
+                // Send a message to the attacker that he hit a critical hit
+                attacker.sendMessage(new TranslationTextComponent("text.koronaswiat.critical_hit"), attacker.getUUID());
                 target.addEffect(new EffectInstance(Effects.BLINDNESS, 30, 1, true, true));
                 target.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 30, 5, true, true));
                 target.addEffect(new EffectInstance(Effects.WEAKNESS, 30, 3, true, true));
+
             }
         }
 

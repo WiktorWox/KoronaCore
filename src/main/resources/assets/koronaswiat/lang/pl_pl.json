@@ -44,6 +44,7 @@
   "tooltip.koronaswiat.shift": "Trzymaj §eSHIFT§r, aby dowiedzieć się więcej",
 
   "text.koronaswiat.stun_text": "Zostałeś ogłuszony!",
+  "text.koronaswiat.critical_hit": "Przeciwnik został ogłuszony!",
 
   "message.heart.wrong_name": "Serce bazy o nazwie %s już istnieje! Zmień jego nazwę z użyciem kowadła"
 }
