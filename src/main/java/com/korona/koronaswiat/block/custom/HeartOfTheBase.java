@@ -146,6 +146,14 @@ public class HeartOfTheBase extends HorizontalBlock {
         //We are removing a region with block item name from the world
         RegionManager.get().removeRegion(tileentity.getTileData().getString("heart_name"));
         super.onRemove(blockState, world, blockPos, blockState1, b);
+        if (!blockState.is(blockState1.getBlock())) {
+            if (tileentity instanceof IInventory) {
+                InventoryHelper.dropContents(world, blockPos, (IInventory)tileentity);
+                world.updateNeighbourForOutputSignal(blockPos, this);
+            }
+
+            super.onRemove(blockState, world, blockPos, blockState1, b);
+        }
     }
 
     @Nullable
