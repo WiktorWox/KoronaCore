@@ -29,7 +29,7 @@ import java.util.List;
 public class SoulPickaxeTool extends PickaxeItem {
     Integer remainingBlocks;
     public SoulPickaxeTool(Properties properties) {
-        super(ModItemTier.SOUL, 5, -2.3F, properties);
+        super(ModItemTier.SOUL, 2, -2.8F, properties);
     }
 
     public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
