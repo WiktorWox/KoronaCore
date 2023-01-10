@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:beacon"
+    },
+    "title": "Zalążek spokojnego świata",
+    "description": "Stwórz bezpieczniejszy świat stawiając magiczną latarnię",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-main",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "koronaswiat:beacon"
+      }
+    }
+  }
+}

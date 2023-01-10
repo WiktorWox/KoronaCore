@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:heart_of_the_base"
+    },
+    "title": "Bezpieczeństwo przede wszystkim",
+    "description": "Postaw serce bazy",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:economy-beacon",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "koronaswiat:heart_of_the_base"
+      }
+    }
+  }
+}

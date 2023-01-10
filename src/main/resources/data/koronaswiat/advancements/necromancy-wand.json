@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:wand"
+    },
+    "title": "Nie dla mugoli",
+    "description": "Zdobądź magiczną laskę.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-main",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "koronaswiat:wand"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "koronaswiat:stone_minas_neuma_crystal"
+    },
+    "title": "Mag poziom 100",
+    "description": "Zdobądź wszystkie magiczne kamienie.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "koronaswiat:necromancy-wand",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "koronaswiat:stone_minas_neuma_crystal"
+          },
+          {
+            "item": "koronaswiat:stone_necromancy"
+          },
+          {
+            "item": "koronaswiat:stone_necromancy_upgraded"
+          }
+        ]
+      }
+    }
+  }
+}
