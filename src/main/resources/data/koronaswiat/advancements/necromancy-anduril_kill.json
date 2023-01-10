@@ -4,7 +4,6 @@
       "item": "koronaswiat:anduril"
     },
     "title": "Boskie uderzenie",
-    "frame": "task",
     "description": "Zadaj wrogowi obrażenia ogłuszając go Andúrilem dwa razy pod rząd.",
     "frame": "challenge",
     "show_toast": true,

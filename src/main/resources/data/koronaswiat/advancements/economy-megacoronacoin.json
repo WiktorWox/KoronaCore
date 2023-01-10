@@ -5,7 +5,7 @@
     },
     "title": "Skąpiec",
     "description": "Zdobądź 20 MegaKoronaCoinów",
-    "frame": "task",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true
   },

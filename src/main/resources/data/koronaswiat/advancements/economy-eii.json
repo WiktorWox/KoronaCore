@@ -5,7 +5,7 @@
     },
     "title": "To koniec (Elżbiety II)?",
     "description": "Zdobądź 5 totemów nieśmiertelności",
-    "frame": "task",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true
   },
