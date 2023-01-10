@@ -1,11 +1,16 @@
 package com.korona.koronaswiat.block.custom;
 
+import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.item.ModItems;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
@@ -62,6 +67,23 @@ public class BannerStand extends Block {
             String command = "execute positioned " + blockPosIn.getX() + " " + blockPosIn.getY() + " " + blockPosIn.getZ() + " run effect give @a[distance=0..3] minecraft:regeneration 1 1";
             source.getCommands().performCommand(source.createCommandSourceStack(), command);
         }
+    }
+
+    public void onRemove(BlockState blockState, World world, BlockPos blockPos, BlockState blockState1, boolean b) {
+        TileEntity tileentity = world.getBlockEntity(blockPos);
+        tileentity.getTileData().putInt("level", blockState.getValue(LEVEL));
+        // Block level KoronaSwiat logger
+        KoronaSwiat.LOGGER.info("Block level: " + blockState.getValue(LEVEL));
+        switch (blockState.getValue(LEVEL)) {
+            case 1: //If empty
+                break;
+            case 2: //If regeneration banner
+                InventoryHelper.dropItemStack(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModItems.REGENERATION_BANNER.get()));
+                break;
+            default: //Never reached
+                break;
+        }
+        super.onRemove(blockState, world, blockPos, blockState1, b);
     }
 
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
