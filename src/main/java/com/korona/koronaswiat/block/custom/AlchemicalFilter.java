@@ -8,6 +8,8 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
@@ -82,6 +84,17 @@ public class AlchemicalFilter extends HorizontalBlock {
                 return new AlchemicalFilterContainer(i, worldIn, pos, playerInventory, playerEntity);
             }
         };
+    }
+    public void onRemove(BlockState blockState, World world, BlockPos blockPos, BlockState blockState1, boolean b) {
+        if (!blockState.is(blockState1.getBlock())) {
+            TileEntity tileentity = world.getBlockEntity(blockPos);
+            if (tileentity instanceof IInventory) {
+                InventoryHelper.dropContents(world, blockPos, (IInventory)tileentity);
+                world.updateNeighbourForOutputSignal(blockPos, this);
+            }
+
+            super.onRemove(blockState, world, blockPos, blockState1, b);
+        }
     }
 
     @Override

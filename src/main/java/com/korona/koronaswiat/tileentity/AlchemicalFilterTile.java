@@ -3,6 +3,8 @@ package com.korona.koronaswiat.tileentity;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -19,7 +21,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class AlchemicalFilterTile extends TileEntity {
+public class AlchemicalFilterTile extends TileEntity implements IInventory {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
@@ -114,9 +116,9 @@ public class AlchemicalFilterTile extends TileEntity {
                 }
             }
             if (craftingTickTime == 200) {
-                itemHandler.getStackInSlot(1).shrink(1);
-                itemHandler.getStackInSlot(2).shrink(1);
-                itemHandler.insertItem(2, new ItemStack(ModItems.SOUL.get()), false);
+                this.removeItem(1, 1);
+                this.removeItem(2, 1);
+                this.setItem(2, new ItemStack(ModItems.SOUL.get()));
                 nbt.put("inv", itemHandler.serializeNBT());
                 nbt.putInt("craftingProcess", 0);
                 nbt.putBoolean("usedWater", false);
@@ -124,5 +126,44 @@ public class AlchemicalFilterTile extends TileEntity {
             }
             craftingTickTime ++;
         }
+    }
+    @Override
+    public int getContainerSize() {
+        return 3;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return itemHandler.getStackInSlot(0) == ItemStack.EMPTY && itemHandler.getStackInSlot(1) == ItemStack.EMPTY && itemHandler.getStackInSlot(2) == ItemStack.EMPTY;
+    }
+
+    @Override
+    public ItemStack getItem(int slot) {
+        return itemHandler.getStackInSlot(slot);
+    }
+
+    @Override
+    public ItemStack removeItem(int slot, int count) {
+        itemHandler.getStackInSlot(slot).shrink(count);
+        return itemHandler.getStackInSlot(slot);
+    }
+
+    @Override
+    public ItemStack removeItemNoUpdate(int p_70304_1_) {
+        return null;
+    }
+
+    @Override
+    public void setItem(int slot, ItemStack itemStack) {
+        itemHandler.insertItem(slot, itemStack, false);
+    }
+
+    @Override
+    public boolean stillValid(PlayerEntity p_70300_1_) {
+        return true;
+    }
+
+    @Override
+    public void clearContent() {
     }
 }
