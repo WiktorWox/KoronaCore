@@ -62,7 +62,7 @@ public class HeartOfTheBaseTile extends TileEntity implements IInventory {
             @Override
             protected void onContentsChanged(int slot) {
                 setChanged();
-                if(Minecraft.getInstance().level.isClientSide()) {
+                if(!Minecraft.getInstance().level.isClientSide()) {
                     KoronaSwiat.LOGGER.info(itemHandler.getStackInSlot(slot).getItem());
                     if (itemHandler.getStackInSlot(slot).getItem() == ModItems.RUNESTONE_BLUE.get()) {
                         changeRegionDistance(1);
@@ -100,12 +100,12 @@ public class HeartOfTheBaseTile extends TileEntity implements IInventory {
         };
     }
 
+
+
     private void changeRegionDistance(Integer rangeLevel) {
         RegionManager regionManager = RegionManager.get();
         Minecraft minecraft = Minecraft.getInstance();
-        CompoundNBT nbt = HeartOfTheBaseTile.this.getTileData();
-        nbt.putInt("rangeLevel", rangeLevel);
-        HeartOfTheBaseTile.this.save(nbt);
+        this.getTileData().putInt("rangeLevel", rangeLevel);
         Integer lvlRange;
         switch(rangeLevel) {
             case 0:
@@ -124,7 +124,9 @@ public class HeartOfTheBaseTile extends TileEntity implements IInventory {
                 lvlRange = 0;
                 break;
         }
-        Region newRegion = (Region)regionManager.getRegion(nbt.getString("heart_name")).get();
+        // Heart name log
+        KoronaSwiat.LOGGER.info("Heart name: " + this.getTileData().getString("heart_name"));
+        Region newRegion = (Region)regionManager.getRegion(this.getTileData().getString("heart_name")).get();
         newRegion.setArea(calculateArea(worldPosition, lvlRange));
         regionManager.updateRegion(newRegion, minecraft.player);
     }
