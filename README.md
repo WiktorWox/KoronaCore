@@ -1,5 +1,9 @@
 ![KoronaCore](https://user-images.githubusercontent.com/77573493/210120188-ddc17245-0d98-4010-b9aa-d7a61017ced5.png)
-# Introduction
+
+---
+
+<img src="https://user-images.githubusercontent.com/77573493/213825064-a8a5f4e5-fc75-48b1-8809-381218ef11d2.png" height="200">
+
 **KoronaCore** is *Minecraft: Java edition* mod for KoronaŚwiat /kɔrɔna ʑviat/ (*from Polish: KoronaWorld*) server. Mod already appeared on *Bedrock edition* as addon, 
 but less developed due to platform limitations. The server also have own story made by author and players.
 
@@ -8,9 +12,10 @@ The mod at first contained a lot of random ideas, which later began to form a la
 things that diversify the gameplay, such as new weapons, items, [archivements](https://wiktorwox.wixsite.com/koronaswiat/osiagniecia-2) or mechanics 
 (for example [*Soul pickaxe*](https://wiktorwox.wixsite.com/koronaswiat/kilof-dusz) or [*Magic staff*](https://wiktorwox.wixsite.com/koronaswiat/magiczna-laska)).
 
-# Authors
-
 ---
+
+<img src="https://user-images.githubusercontent.com/77573493/213825268-a788fae6-403e-48e7-9489-b1296653eba6.png" height="200">
+
 ### WiktorWox
 
 The main mod and server developer and story creator is young programmer from Poland - [**WiktorWox**](https://www.youtube.com/channel/UCPzSaKohpaC-vPd7XEdaKKg), 
@@ -39,7 +44,7 @@ But in development of this project helped a lot **DoPixo** and [**Spedix**](http
 
 ---
 
-# Features
+<img src="https://user-images.githubusercontent.com/77573493/213825332-0cd6aefb-a2ce-45b7-b011-6c35a1dcf104.png" height="200">
 
 All of the features are accurately described on [this site](https://wiktorwox.wixsite.com/koronaswiat/new-lands-update), but sadly only in polish language, so i will list them here:
 
@@ -71,26 +76,43 @@ All of the features are accurately described on [this site](https://wiktorwox.wi
 
 ---
 
-## Co-Mods (With which mods our KoronaCore is working?)
+<img src="https://user-images.githubusercontent.com/77573493/213825381-2a422e50-5cdc-4a43-9f0b-1ed2256ef0fb.png" height="200">
 
----
+[<img src="https://user-images.githubusercontent.com/77573493/213822416-43d72b83-0c33-40ba-a437-e9200a21342f.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/worldprotector)
 
-### [WorldProtector](https://www.curseforge.com/minecraft/mc-mods/worldprotector) by [Mosca42](https://www.youtube.com/c/Mosca4210/videos) (by [z0rdak](https://github.com/Z0rdak) for our Minecraft version)
-We used his mod to create *heart of the base*. We are grateful that he made it so simple and clear that we could easily use its classes and methods
+### by [Mosca42](https://www.youtube.com/c/Mosca4210/videos) (by [z0rdak](https://github.com/Z0rdak) for our Minecraft version)
+A mod, which adding regions, that protect area from griefing. We used his mod to create *heart of the base* and to protect the spawn area. We are grateful that he made it so simple and clear that we could easily use its classes and methods
 
 - [License](https://creativecommons.org/licenses/by-nc/3.0/) - Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
 
-<img src="https://user-images.githubusercontent.com/77573493/210118716-528acd82-51ef-4c3e-9873-702cccfb99fb.png" width="100">
-
 ---
 
-### [Bandles plus](https://www.curseforge.com/minecraft/mc-mods/bundles-plus) by [adox123](https://www.curseforge.com/members/adox123/followers)
+[<img src="https://user-images.githubusercontent.com/77573493/213822557-57982cf9-f7d0-4821-9685-fe1f8e1ecba6.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/bundles-plus)
+
+### by [adox123](https://www.curseforge.com/members/adox123/followers)
 You can buy a bundle with banker villager to keep your items in it!
 
 - [License](https://opensource.org/licenses/MIT) - The MIT License
 
-<img src="https://user-images.githubusercontent.com/77573493/210118807-9e3d93c6-824b-49e3-8f0f-20445b760954.png" width="100">
+---
 
+[<img src="https://user-images.githubusercontent.com/77573493/213822646-ff78a19d-ea20-45e0-98fa-712b97e14f93.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/create)
+
+---
+
+[<img src="https://user-images.githubusercontent.com/77573493/213822761-baaf8736-1567-4edd-bc2f-a49061e1b62e.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/flywheel)
+
+---
+
+[<img src="https://user-images.githubusercontent.com/77573493/213822901-849f5556-9210-4001-bd54-6510ca8cad32.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/feudal-weaponry-forge)
+
+---
+
+[<img src="https://user-images.githubusercontent.com/77573493/213822957-22d804cf-0242-40b4-8a15-9063aab9b984.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/neoelfeos-medieval-pub-decoration)
+
+---
+
+[<img src="https://user-images.githubusercontent.com/77573493/213823022-efabef2f-5630-4310-8f8a-7467bf760932.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/custom-npcs)
 
 ---
 
