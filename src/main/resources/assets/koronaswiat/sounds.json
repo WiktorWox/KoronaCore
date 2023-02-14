@@ -4,35 +4,105 @@
     "category": "players",
     "subtitle": "koronaswiat.item_scythe_hit",
     "sounds": [
-      "koronaswiat:item_scythe_hit"
+      "koronaswiat:item/scythe_hit"
     ]
   },
   "item_soul_pickaxe_charge": {
     "category": "players",
     "subtitle": "koronaswiat.item_soul_pickaxe_charge",
     "sounds": [
-      "koronaswiat:soul_pickaxe/charge/soul_pickaxe1",
-      "koronaswiat:soul_pickaxe/charge/soul_pickaxe2",
-      "koronaswiat:soul_pickaxe/charge/soul_pickaxe3",
-      "koronaswiat:soul_pickaxe/charge/soul_pickaxe4"
+      "koronaswiat:item/soul_pickaxe/charge/soul_pickaxe1",
+      "koronaswiat:item/soul_pickaxe/charge/soul_pickaxe2",
+      "koronaswiat:item/soul_pickaxe/charge/soul_pickaxe3",
+      "koronaswiat:item/soul_pickaxe/charge/soul_pickaxe4"
     ]
   },
   "item_soul_pickaxe_discharge": {
     "category": "players",
     "subtitle": "koronaswiat.item_soul_pickaxe_discharge",
     "sounds": [
-      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe1",
-      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe2",
-      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe3",
-      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe4",
-      "koronaswiat:soul_pickaxe/discharge/soul_pickaxe5"
+      "koronaswiat:item/soul_pickaxe/discharge/soul_pickaxe1",
+      "koronaswiat:item/soul_pickaxe/discharge/soul_pickaxe2",
+      "koronaswiat:item/soul_pickaxe/discharge/soul_pickaxe3",
+      "koronaswiat:item/soul_pickaxe/discharge/soul_pickaxe4",
+      "koronaswiat:item/soul_pickaxe/discharge/soul_pickaxe5"
     ]
   },
   "item_banner": {
     "category": "players",
     "subtitle": "koronaswiat.item_banner",
     "sounds": [
-      "koronaswiat:banner_sound"
+      "koronaswiat:item/banner_sound"
+    ]
+  },
+  "kyle": {
+    "category": "players",
+    "subtitle": "koronaswiat.kyle",
+    "sounds": [
+      "koronaswiat:npc/kyle"
+    ]
+  },
+  "luis_aboutplace": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_aboutplace",
+    "sounds": [
+      "koronaswiat:npc/luis/aboutplace"
+    ]
+  },
+  "luis_attack": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_attack",
+    "sounds": [
+      "koronaswiat:npc/luis/attack"
+    ]
+  },
+  "luis_iftellsomeone": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_iftellsomeone",
+    "sounds": [
+      "koronaswiat:npc/luis/iftellsomeone"
+    ]
+  },
+  "luis_intro": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_intro",
+    "sounds": [
+      "koronaswiat:npc/luis/intro"
+    ]
+  },
+  "luis_intro2": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_intro2",
+    "sounds": [
+      "koronaswiat:npc/luis/intro2"
+    ]
+  },
+  "luis_news": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_news",
+    "sounds": [
+      "koronaswiat:npc/luis/news"
+    ]
+  },
+  "luis_structure": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_structure",
+    "sounds": [
+      "koronaswiat:npc/luis/structure"
+    ]
+  },
+  "luis_whyhiding": {
+    "category": "players",
+    "subtitle": "koronaswiat.luis_whyhiding",
+    "sounds": [
+      "koronaswiat:npc/luis/whyhiding"
+    ]
+  },
+  "disc": {
+    "category": "players",
+    "subtitle": "koronaswiat.disc",
+    "sounds": [
+      "koronaswiat:block/disc"
     ]
   }
 }
