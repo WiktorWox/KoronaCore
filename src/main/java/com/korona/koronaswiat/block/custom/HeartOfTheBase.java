@@ -3,55 +3,37 @@ package com.korona.koronaswiat.block.custom;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.container.HeartOfTheBaseContainer;
-import com.korona.koronaswiat.container.UpgradeContainerContainer;
-import com.korona.koronaswiat.item.ModItems;
 import com.korona.koronaswiat.tileentity.HeartOfTheBaseTile;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
-import com.korona.koronaswiat.tileentity.UpgradeContainerTile;
-import fr.mosca421.worldprotector.core.IRegion;
 import fr.mosca421.worldprotector.core.Region;
 import fr.mosca421.worldprotector.data.RegionManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
-import net.minecraft.util.RegistryKey;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.fml.LogicalSidedProvider;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
-
-import java.util.Optional;
-
-import static com.ibm.icu.impl.ValidIdentifiers.Datatype.region;
 
 public class HeartOfTheBase extends HorizontalBlock {
     public HeartOfTheBase(Properties properties) {

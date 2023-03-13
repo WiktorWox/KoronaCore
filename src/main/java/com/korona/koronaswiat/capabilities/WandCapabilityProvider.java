@@ -1,6 +1,5 @@
 package com.korona.koronaswiat.capabilities;
 
-import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;

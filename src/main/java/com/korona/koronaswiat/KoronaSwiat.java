@@ -1,7 +1,6 @@
 package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
-import com.korona.koronaswiat.container.HeartOfTheBaseContainer;
 import com.korona.koronaswiat.container.ModContainers;
 import com.korona.koronaswiat.entity.Villager;
 import com.korona.koronaswiat.guis.WandGui;
@@ -12,13 +11,9 @@ import com.korona.koronaswiat.screen.UpgradeContainerScreen;
 import com.korona.koronaswiat.screen.WandScreen;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.util.ModSoundEvent;
-import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.gui.ScreenManager;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,8 +28,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.GameData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

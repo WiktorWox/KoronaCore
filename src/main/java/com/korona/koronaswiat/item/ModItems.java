@@ -1,9 +1,7 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
-import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.item.custom.*;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

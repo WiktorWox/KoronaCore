@@ -1,46 +1,22 @@
 package com.korona.koronaswiat.guis;
 
-import com.google.common.collect.Lists;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.ModItems;
-import com.korona.koronaswiat.item.custom.WandItem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
-import net.minecraft.client.gui.IngameGui;
-import net.minecraft.client.gui.NewChatGui;
-import net.minecraft.client.gui.SpectatorGui;
-import net.minecraft.client.gui.chat.IChatListener;
-import net.minecraft.client.gui.chat.NarratorChatListener;
-import net.minecraft.client.gui.chat.NormalChatListener;
-import net.minecraft.client.gui.chat.OverlayChatListener;
-import net.minecraft.client.gui.overlay.BossOverlayGui;
-import net.minecraft.client.gui.overlay.DebugOverlayGui;
-import net.minecraft.client.gui.overlay.PlayerTabOverlayGui;
-import net.minecraft.client.gui.overlay.SubtitleOverlayGui;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.inventory.InventoryScreen;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ChatType;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.SlotItemHandler;
-
-import javax.annotation.Nonnull;
-import javax.swing.plaf.basic.BasicComboBoxUI;
 
 @OnlyIn(Dist.CLIENT)
 public class WandGui extends AbstractGui {

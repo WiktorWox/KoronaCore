@@ -3,7 +3,6 @@ package com.korona.koronaswiat.block.custom;
 import com.korona.koronaswiat.container.UpgradeContainerContainer;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import com.korona.koronaswiat.tileentity.UpgradeContainerTile;
-import fr.mosca421.worldprotector.data.RegionManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;

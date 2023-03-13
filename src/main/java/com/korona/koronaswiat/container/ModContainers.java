@@ -1,7 +1,6 @@
 package com.korona.koronaswiat.container;
 
 import com.korona.koronaswiat.KoronaSwiat;
-import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
