@@ -1,0 +1,62 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_dot"
+      }
+    },
+    {
+      "when": {
+        "soul_north": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side"
+      }
+    },
+    {
+      "when": {
+        "soul_east": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "soul_south": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "soul_west": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "soul_up": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "soul_down": "true"
+      },
+      "apply": {
+        "model": "koronaswiat:block/canal_of_souls/cos_side",
+        "x": 90
+      }
+    }
+  ]
+}
