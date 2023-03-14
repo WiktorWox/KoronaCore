@@ -50,7 +50,7 @@ public class KoronaSwiat {
         ModContainers.register((eventBus));
         Villager.VILLAGER_PROFESSION.register(eventBus);
         Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
-        MinecraftForge.EVENT_BUS.register(new WandGui());
+//        MinecraftForge.EVENT_BUS.register(new IntroGui());
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -82,6 +82,7 @@ public class KoronaSwiat {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        MinecraftForge.EVENT_BUS.register(new WandGui());
         event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
                     WandScreen::new);

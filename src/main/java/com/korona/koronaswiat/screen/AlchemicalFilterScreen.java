@@ -14,7 +14,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class AlchemicalFilterScreen extends ContainerScreen<AlchemicalFilterContainer> {
-    public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
     private final ResourceLocation GUI = new ResourceLocation(KoronaSwiat.MOD_ID,
             "textures/gui/alchemical_filter_gui.png");
 
