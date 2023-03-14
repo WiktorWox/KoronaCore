@@ -104,5 +104,78 @@
     "sounds": [
       "koronaswiat:block/disc"
     ]
+  },
+  "message": {
+    "category": "players",
+    "subtitle": "koronaswiat.message",
+    "sounds": [
+      "koronaswiat:npc/message/message1_1",
+      "koronaswiat:npc/message/message1_2",
+      "koronaswiat:npc/message/message2_1",
+      "koronaswiat:npc/message/message2_2",
+      "koronaswiat:npc/message/message3_1",
+      "koronaswiat:npc/message/message3_2",
+      "koronaswiat:npc/message/message4_1",
+      "koronaswiat:npc/message/message5_1",
+      "koronaswiat:npc/message/message5_2",
+      "koronaswiat:npc/message/message6_1",
+      "koronaswiat:npc/message/message6_2"
+    ]
+  },
+  "annoucement1": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement1",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement1"
+    ]
+  },
+  "annoucement2": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement2",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement2"
+    ]
+  },
+  "annoucement3": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement3",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement3"
+    ]
+  },
+  "annoucement4": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement4",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement4"
+    ]
+  },
+  "annoucement5": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement5",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement5"
+    ]
+  },
+  "annoucement6": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement6",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement6"
+    ]
+  },
+  "annoucement7": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement7",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement7"
+    ]
+  },
+  "annoucement8": {
+    "category": "players",
+    "subtitle": "koronaswiat.annoucement8",
+    "sounds": [
+      "koronaswiat:npc/annoucement/annoucement8"
+    ]
   }
 }
