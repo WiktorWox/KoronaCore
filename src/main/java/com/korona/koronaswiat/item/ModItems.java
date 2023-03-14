@@ -57,6 +57,10 @@ public class ModItems {
     public static final RegistryObject<Item> SOUL = ITEMS.register(
             "soul",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> DOOR_STONE = ITEMS.register(
+            "door_stone",
+            () -> new Item(new Item.Properties().tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1)));
     public static final RegistryObject<Item> SOUL_SAND_DUST = ITEMS.register(
             "soul_sand_dust",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
