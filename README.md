@@ -81,7 +81,7 @@ All of the features are accurately described on [this site](https://wiktorwox.wi
 [<img src="https://user-images.githubusercontent.com/77573493/213822416-43d72b83-0c33-40ba-a437-e9200a21342f.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/worldprotector)
 
 ### by [Mosca42](https://www.youtube.com/c/Mosca4210/videos) (by [z0rdak](https://github.com/Z0rdak) for our Minecraft version)
-A mod, which adding regions, that protect area from griefing. We used his mod to create *heart of the base* and to protect the spawn area. We are grateful that he made it so simple and clear that we could easily use its classes and methods
+A mod, which adding regions, that protect area from griefing. We used his mod to create *heart of the base* and to protect the spawn area. We are grateful that he made it so simple and clear that we could easily use its classes and methods.
 
 - [License](https://creativecommons.org/licenses/by-nc/3.0/) - Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
 
@@ -98,21 +98,44 @@ You can buy a bundle with banker villager to keep your items in it!
 
 [<img src="https://user-images.githubusercontent.com/77573493/213822646-ff78a19d-ea20-45e0-98fa-712b97e14f93.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/create)
 
+### by [simibubi](https://www.curseforge.com/members/simibubi/followers) and others
+One of the largest mods that was made. Adding a lot of mechanics that adds automations. The mod is made in steampunk style so it's fits to the server topic.
+
+- [License](https://opensource.org/licenses/MIT) - The MIT License
+
 ---
 
 [<img src="https://user-images.githubusercontent.com/77573493/213822761-baaf8736-1567-4edd-bc2f-a49061e1b62e.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/flywheel)
+
+### by [jozufozu](https://www.curseforge.com/members/jozufozu/followers) and [Pepper_Bell](https://www.curseforge.com/members/pepper_bell/followers)
+The mod that helps with limitations of Minecraft engine. It is needed to use Create mod.
+
+- [License](https://opensource.org/licenses/MIT) - The MIT License
 
 ---
 
 [<img src="https://user-images.githubusercontent.com/77573493/213822901-849f5556-9210-4001-bd54-6510ca8cad32.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/feudal-weaponry-forge)
 
+### by [knightm3re](https://www.curseforge.com/members/knightm3re/followers)
+Adds a lot of medival weapons.
+
+- License - All Rights Reserved unless otherwise explicitly stated
+
 ---
 
 [<img src="https://user-images.githubusercontent.com/77573493/213822957-22d804cf-0242-40b4-8a15-9063aab9b984.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/neoelfeos-medieval-pub-decoration)
 
+### by [neoelfe0](https://www.curseforge.com/members/neoelfe0/followers)
+The mod that adds a bunch of decoration blocks. They are used on plot area but You can use them yourself!
+
+- [License](https://opensource.org/licenses/MIT) - The MIT License
+
 ---
 
 [<img src="https://user-images.githubusercontent.com/77573493/213823022-efabef2f-5630-4310-8f8a-7467bf760932.png" high="100">](https://www.curseforge.com/minecraft/mc-mods/custom-npcs)
+
+### by [Noppes_](https://www.curseforge.com/members/noppes_)
+Adds a awesome way to create system of NPCs and quests.
 
 ---
 
