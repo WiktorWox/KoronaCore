@@ -14,6 +14,7 @@
   "item.koronaswiat.runestone_blue": "Blue runestone",
   "item.koronaswiat.runestone_purple": "Purple runestone",
   "item.koronaswiat.runestone_red": "Red runestone",
+  "item.koronaswiat.door_stone": "Strange stone",
 
   "item.koronaswiat.tea_green": "Green tea",
   "item.koronaswiat.tea_earl_grey": "Earl grey",
@@ -45,6 +46,45 @@
 
   "text.koronaswiat.stun_text": "You're stuned!",
   "text.koronaswiat.critical_hit": "Target had been stuned!",
+
+  "disc0.tooltip.title": "§6§lDisc 0",
+  "disc0.tooltip.line1": "Description",
+
+  "disc1.tooltip.title": "§6§lDisc 1",
+  "disc1.tooltip.line1": "Description",
+
+  "disc2.tooltip.title": "§6§lDisc 2",
+  "disc2.tooltip.line1": "Description",
+
+  "disc3.tooltip.title": "§6§lDisc 3",
+  "disc3.tooltip.line1": "Description",
+
+  "disc4.tooltip.title": "§6§lDisc 4",
+  "disc4.tooltip.line1": "Description",
+
+  "disc5.tooltip.title": "§6§lDisc 5",
+  "disc5.tooltip.line1": "Description",
+
+  "disc6.tooltip.title": "§6§lDisc 6",
+  "disc6.tooltip.line1": "Description",
+
+  "disc7.tooltip.title": "§6§lDisc 7",
+  "disc7.tooltip.line1": "Description",
+
+  "disc8.tooltip.title": "§6§lDisc 8",
+  "disc8.tooltip.line1": "Description",
+
+  "disc9.tooltip.title": "§b§lDisc 9",
+  "disc9.tooltip.line1": "Description",
+
+  "disc10.tooltip.title": "§b§lDisc 10",
+  "disc10.tooltip.line1": "Description",
+
+  "disc11.tooltip.title": "§b§lSpedix's disc",
+  "disc11.tooltip.line1": "Description",
+
+  "disc12.tooltip.title": "§b§lFlame's disc",
+  "disc12.tooltip.line1": "Description",
 
   "message.heart.wrong_name": "Heart of the base with a %s name is already on the world! Change it with anvil"
 
