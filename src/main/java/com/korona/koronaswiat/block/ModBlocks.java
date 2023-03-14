@@ -41,6 +41,10 @@ public class ModBlocks {
             () -> new CanalOfSouls(AbstractBlock.Properties.of(Material.DECORATION)
                     .harvestLevel(2).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(5f).noOcclusion()));
 
+    public static final RegistryObject<Block> DISC = registerBlock("disc",
+            () -> new Disc(AbstractBlock.Properties.of(Material.DECORATION)
+                    .requiresCorrectToolForDrops().noOcclusion().harvestLevel(100)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

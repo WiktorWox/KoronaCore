@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "found=false": {
+      "model": "koronaswiat:block/disc_golden"
+    },
+    "found=true": {
+      "model": "koronaswiat:block/disc_stone"
+    }
+  }
+}
