@@ -118,6 +118,7 @@ dependencies {
 //    implementation group: 'org.bukkit', name: 'bukkit', version: '1.7.9-R0.1-SNAPSHOT'
 //    implementation 'com.sk89q:worldedit:7.2.2'
     implementation fg.deobf('fr.mosca421:worldprotector:1.16.3-2.1.9.1')
+//    implementation fg.deobf('srg.net:optifine:1.16.5')
 //    implementation fg.deobf('me.shedaniel:architectury:1.15.14-forge')
 //    implementation fg.deobf('me.shedaniel:cloth-config:4.10.13-forge')
 //    implementation fg.deobf(curse.maven:)
