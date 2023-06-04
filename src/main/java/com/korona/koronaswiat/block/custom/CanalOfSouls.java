@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-import java.util.Map;
+import java.util.*;
 
 public class CanalOfSouls extends Block {
 
@@ -166,6 +166,31 @@ public class CanalOfSouls extends Block {
                 world.updateNeighborsAt(blockPos.relative(direction), this);
             }
 
+        }
+    }
+
+    private void update(BlockPos pos, World world) {
+        Queue<BlockPos> queue = new LinkedList<>(); // create a queue to hold the positions of blocks that need to be updated
+        Set<BlockPos> visited = new HashSet<>(); // create a set to hold the positions of visited blocks
+        queue.add(pos); // add the starting block to the queue
+        visited.add(pos); // add the starting block to the visited set
+
+        while (!queue.isEmpty()) { // loop until all blocks in the queue have been processed
+            BlockPos currentPos = queue.remove(); // get the next block position from the queue
+            Block currentBlock = world.getBlockState(currentPos).getBlock(); // get the current block instance
+
+            world.updateNeighborsAt(currentPos, currentBlock); // notify neighbors of the current block update
+
+            // add all neighboring blocks to the queue for processing
+            for (Direction direction : Direction.values()) {
+                BlockPos neighborPos = currentPos.offset(direction.getNormal());
+                Block neighborBlock = world.getBlockState(neighborPos).getBlock();
+
+                if (currentBlock.equals(neighborBlock) && !visited.contains(neighborPos)) {
+                    queue.add(neighborPos);
+                    visited.add(neighborPos);
+                }
+            }
         }
     }
 
