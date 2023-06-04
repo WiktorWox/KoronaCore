@@ -2,9 +2,12 @@ package com.korona.koronaswiat;
 
 import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.container.ModContainers;
+import com.korona.koronaswiat.entity.ModEntityTypes;
 import com.korona.koronaswiat.entity.Villager;
+import com.korona.koronaswiat.entity.projectile.FireBallEntity;
 import com.korona.koronaswiat.guis.WandGui;
 import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.client.renderer.FireBallRenderer;
 import com.korona.koronaswiat.screen.AlchemicalFilterScreen;
 import com.korona.koronaswiat.screen.HeartOfTheBaseScreen;
 import com.korona.koronaswiat.screen.UpgradeContainerScreen;
@@ -16,11 +19,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -48,6 +53,7 @@ public class KoronaSwiat {
         ModTileEntities.register(eventBus);
         ModSoundEvent.register(eventBus);
         ModContainers.register((eventBus));
+        ModEntityTypes.ENTITY_TYPES.register(eventBus);
         Villager.VILLAGER_PROFESSION.register(eventBus);
         Villager.POINT_OF_INTEREST_TYPE.register(eventBus);
 //        MinecraftForge.EVENT_BUS.register(new IntroGui());
@@ -83,6 +89,7 @@ public class KoronaSwiat {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         MinecraftForge.EVENT_BUS.register(new WandGui());
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FIRE_BALL.get(), FireBallRenderer::new);
         event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
                     WandScreen::new);
