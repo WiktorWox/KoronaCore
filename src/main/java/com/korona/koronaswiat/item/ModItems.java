@@ -2,6 +2,8 @@ package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.custom.*;
+import com.korona.koronaswiat.item.custom.stone.MinasNeumaStone;
+import com.korona.koronaswiat.item.custom.stone.SoulWaveStone;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -23,6 +25,10 @@ public class ModItems {
 
     // Added items:
     public static final RegistryObject<Item> CORONACOIN = ITEMS.register("coronacoin",
+            () -> new Item(new Item.Properties()
+                    .tab(ItemGroup.TAB_MISC)));
+    public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register(
+            "megacoronacoin",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 
@@ -69,6 +75,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 
+    // -- EQUIPMENT
     public static final RegistryObject<Item> WAND = ITEMS.register(
             "wand",
             () -> new WandItem());
@@ -89,16 +96,19 @@ public class ModItems {
             () -> new SoulPickaxeTool(new Item.Properties()
                     .tab(ItemGroup.TAB_TOOLS)
                     .stacksTo(1)));
-    public static final RegistryObject<Item> MEGACORONACOIN = ITEMS.register(
-            "megacoronacoin",
-            () -> new Item(new Item.Properties()
-                    .tab(ItemGroup.TAB_MISC)));
 
-    public static final RegistryObject<Item> STONE_MINAS_NEUMA_CRYSTAL = ITEMS.register(
+    // -- MAGIC STONES
+    public static final RegistryObject<MinasNeumaStone> STONE_MINAS_NEUMA_CRYSTAL = ITEMS.register(
             "stone_minas_neuma_crystal",
-            () -> new Item(new Item.Properties()
+            () -> new MinasNeumaStone(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
-                    .stacksTo(1)));
+                    .stacksTo(1), 240));
+
+    public static final RegistryObject<SoulWaveStone> STONE_SOUL_WAVE = ITEMS.register(
+            "stone_soul_wave",
+            () -> new SoulWaveStone(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1), 240));
     public static final RegistryObject<Item> STONE_NECROMANCY = ITEMS.register(
             "stone_necromancy",
             () -> new Item(new Item.Properties()
@@ -109,6 +119,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1)));
+
+    // -- RUNESTONES & HOTB UPGRADES
     public static final RegistryObject<Item> RUNESTONE_BLUE = ITEMS.register(
             "runestone_blue",
             () -> new Item(new Item.Properties()
@@ -124,6 +136,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(16)));
+
+    // -- BANNERS
     public static final RegistryObject<Item> REGENERATION_BANNER = ITEMS.register(
             "regeneration_banner",
             () -> new BannerItem(new Item.Properties()
