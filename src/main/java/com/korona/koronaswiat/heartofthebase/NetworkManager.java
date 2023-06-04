@@ -1,11 +1,9 @@
 //package com.korona.koronaswiat.heartofthebase;
 //
 //import com.korona.koronaswiat.KoronaSwiat;
-//import fr.mosca421.worldprotector.WorldProtector;
 //import fr.mosca421.worldprotector.api.event.RegionEvent;
 //import fr.mosca421.worldprotector.core.IRegion;
 //import fr.mosca421.worldprotector.data.DimensionRegionCache;
-//import fr.mosca421.worldprotector.data.RegionManager;
 //import net.minecraft.entity.player.PlayerEntity;
 //import net.minecraft.nbt.CompoundNBT;
 //import net.minecraft.server.MinecraftServer;
@@ -22,24 +20,24 @@
 //
 //import java.util.*;
 //
-//public class HeartSystemManager extends WorldSavedData {
+//public class NetworkManager extends WorldSavedData {
 //    public static final String TAG_REGIONS = "regions";
 //    private static final String DATA_NAME = "koronaswiat";
 //    private static final Map<RegistryKey<World>, DimensionRegionCache> heartMap = new HashMap();
-//    private static HeartSystemManager clientHeartCopy = new HeartSystemManager();
+//    private static NetworkManager clientHeartCopy = new NetworkManager();
 //
-//    private HeartSystemManager() {
+//    private NetworkManager() {
 //        super("koronaswiat");
 //    }
 //
-//    public static HeartSystemManager get() {
+//    public static NetworkManager get() {
 //        if (clientHeartCopy == null) {
 //            MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
 //            if (server != null) {
 //                ServerWorld overworld = server.getLevel(World.OVERWORLD);
 //                if (overworld != null && !overworld.isClientSide) {
 //                    DimensionSavedDataManager storage = overworld.getDataStorage();
-//                    clientHeartCopy = (HeartSystemManager)storage.computeIfAbsent(HeartSystemManager::new, "koronaswiat");
+//                    clientHeartCopy = (NetworkManager)storage.computeIfAbsent(NetworkManager::new, "koronaswiat");
 //                }
 //            }
 //        }
@@ -52,7 +50,7 @@
 //            ServerWorld world = (ServerWorld) Objects.requireNonNull(event.getServer().getLevel(World.OVERWORLD));
 //            if (!world.isClientSide) {
 //                DimensionSavedDataManager storage = world.getDataStorage();
-//                HeartSystemManager data = (HeartSystemManager)storage.computeIfAbsent(HeartSystemManager::new, "koronaswiat");
+//                NetworkManager data = (NetworkManager)storage.computeIfAbsent(NetworkManager::new, "koronaswiat");
 //                storage.set(data);
 //                clientHeartCopy = data;
 //                KoronaSwiat.LOGGER.info("Loaded regions for dimensions");
@@ -98,6 +96,28 @@
 //
 //    public Optional<DimensionRegionCache> getHeartsForDim(RegistryKey<World> dim) {
 //        return heartMap.containsKey(dim) ? Optional.of(heartMap.get(dim)) : Optional.empty();
+//    }
+//
+//    private Optional<RegistryKey<World>> getDimensionOfHeart(String heartName) {
+//        return heartMap.entrySet().stream().filter((entry) -> {
+//            return ((DimensionRegionCache)entry.getValue()).containsKey(heartName);
+//        }).map(Map.Entry::getKey).findFirst();
+//    }
+//
+//    public Optional<IRegion> getHeartInDim(RegistryKey<World> dim, String regionName) {
+//        return heartMap.containsKey(dim) && ((DimensionRegionCache)heartMap.get(dim)).containsKey(regionName) ? Optional.of(((DimensionRegionCache)regionMap.get(dim)).get(regionName)) : Optional.empty();
+//    }
+//
+//    public void addHeartToDim(IRegion region) {
+//        RegistryKey<World> dim = region.getDimension();
+//        if (heartMap.containsKey(dim)) {
+//            ((DimensionRegionCache)heartMap.get(dim)).put(region.getName(), region);
+//        } else {
+//            DimensionRegionCache initMapForDim = new DimensionRegionCache(region);
+//            heartMap.put(dim, initMapForDim);
+//        }
+//
+//        this.setDirty();
 //    }
 //
 //    public boolean removeHeart(String regionName, RegistryKey<World> dim) {
