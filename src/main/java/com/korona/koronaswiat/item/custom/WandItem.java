@@ -3,6 +3,7 @@ package com.korona.koronaswiat.item.custom;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.capabilities.WandCapabilityProvider;
 import com.korona.koronaswiat.container.WandContainer;
+import com.korona.koronaswiat.item.custom.stone.IMagicStoneItem;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -38,9 +39,9 @@ public class WandItem extends Item implements ICapabilityProvider {
 
     public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
+        CompoundNBT nbtData = getNbtData(itemstack);
         if (Screen.hasAltDown()) {
             int useItem;
-            CompoundNBT nbtData = getNbtData(itemstack);
             if (nbtData.contains("useItem")) {
                 useItem = nbtData.getInt("useItem");
             } else {
@@ -68,6 +69,13 @@ public class WandItem extends Item implements ICapabilityProvider {
                     }
                 }, player.blockPosition());
             }
+        } else {
+            // Getting stone as IMagicStoneItem
+            IMagicStoneItem stone = (IMagicStoneItem)(itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElse(new ItemStackHandler()).getStackInSlot(nbtData.getInt("useItem")).getItem());
+
+            // Executing stone effect and setting cooldown after that
+            stone.executeStoneEffect(world, player, hand);
+            player.getCooldowns().addCooldown(this, stone.getCoolDownTime());
         }
         return ActionResult.success(itemstack);
     }

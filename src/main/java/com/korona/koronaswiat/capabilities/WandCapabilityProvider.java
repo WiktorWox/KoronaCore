@@ -1,6 +1,7 @@
 package com.korona.koronaswiat.capabilities;
 
 import com.korona.koronaswiat.item.ModItems;
+import com.korona.koronaswiat.item.custom.stone.IMagicStoneItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
@@ -38,7 +39,7 @@ public class WandCapabilityProvider implements ICapabilitySerializable<INBT> {
 
             @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-                return stack.getItem() == ModItems.STONE_MINAS_NEUMA_CRYSTAL.get() || stack.getItem() == ModItems.STONE_NECROMANCY.get() || stack.getItem() == ModItems.STONE_NECROMANCY_UPGRADED.get();
+                return stack.getItem() instanceof IMagicStoneItem;
             }
 
             @Override
