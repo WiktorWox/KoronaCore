@@ -20,6 +20,8 @@ public class ModSoundEvent {
             registerSoundEvent("item_soul_pickaxe_discharge");
     public static final RegistryObject<SoundEvent> ITEM_BANNER =
             registerSoundEvent("item_banner");
+    public static final RegistryObject<SoundEvent> ITEM_STONE_MINASNEUMACRYSTAL =
+            registerSoundEvent("item_stone_minasneumacrystal");
     public static final RegistryObject<SoundEvent> KYLE =
             registerSoundEvent("kyle");
     public static final RegistryObject<SoundEvent> LUIS_ABOUTPLACE =

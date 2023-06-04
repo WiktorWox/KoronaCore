@@ -35,6 +35,13 @@
       "koronaswiat:item/banner_sound"
     ]
   },
+  "item_stone_minasneumacrystal": {
+    "category": "players",
+    "subtitle": "koronaswiat.item_stone_minasneumacrystal",
+    "sounds": [
+      "koronaswiat:item/magic_stones/minas_neuma_crystal"
+    ]
+  },
   "kyle": {
     "category": "players",
     "subtitle": "koronaswiat.kyle",
