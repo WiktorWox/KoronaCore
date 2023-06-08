@@ -32,6 +32,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 
+    public static final RegistryObject<Item> FIRE_BALL = ITEMS.register("fire_ball",
+            () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)));
+
     public static final RegistryObject<Item> STRANGE_BREAD = ITEMS.register("strange_bread",
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_FOOD)
