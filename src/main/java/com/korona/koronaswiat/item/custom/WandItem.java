@@ -70,12 +70,14 @@ public class WandItem extends Item implements ICapabilityProvider {
                 }, player.blockPosition());
             }
         } else {
-            // Getting stone as IMagicStoneItem
-            IMagicStoneItem stone = (IMagicStoneItem)(itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElse(new ItemStackHandler()).getStackInSlot(nbtData.getInt("useItem")).getItem());
+            if (!itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElse(new ItemStackHandler()).getStackInSlot(nbtData.getInt("useItem")).isEmpty()) {
+                // Getting stone as IMagicStoneItem
+                IMagicStoneItem stone = (IMagicStoneItem) (itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElse(new ItemStackHandler()).getStackInSlot(nbtData.getInt("useItem")).getItem());
 
-            // Executing stone effect and setting cooldown after that
-            stone.executeStoneEffect(world, player, hand);
-            player.getCooldowns().addCooldown(this, stone.getCoolDownTime());
+                // Executing stone effect and setting cooldown after that
+                stone.executeStoneEffect(world, player, hand);
+                player.getCooldowns().addCooldown(this, stone.getCoolDownTime());
+            }
         }
         return ActionResult.success(itemstack);
     }
