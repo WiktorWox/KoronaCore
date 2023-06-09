@@ -8,9 +8,9 @@ import net.minecraft.potion.Effects;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class Kiuskivi extends Item implements IMagicStoneItem {
+public class Kiuaskivi extends Item implements IMagicStoneItem {
     public Integer cooldownTime;
-    public Kiuskivi(Properties properties, Integer cooldownTime) {
+    public Kiuaskivi(Properties properties, Integer cooldownTime) {
         super(properties);
         this.cooldownTime = cooldownTime;
     }
