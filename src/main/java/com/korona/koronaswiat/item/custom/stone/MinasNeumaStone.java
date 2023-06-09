@@ -37,8 +37,6 @@ public class MinasNeumaStone extends Item implements IMagicStoneItem {
         player.level.playSound((PlayerEntity) null, player.getX(), player.getY(), player.getZ(), ModSoundEvent.ITEM_STONE_MINASNEUMACRYSTAL.get(), SoundCategory.PLAYERS, 18, 1);
         // show horizontal circle wave of particles moving away from player
         createParticles(world, player, hand);
-        AbstractArrowEntity abstractarrowentity = ModEntityTypes.FIRE_BALL.get().create(world);
-        abstractarrowentity.shootFromRotation(player, player.xRot, player.yRot, 0.0F, 3.0F, 1.0F);
     }
 
     public void createParticles(World world, PlayerEntity player, Hand hand) {

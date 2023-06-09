@@ -3,7 +3,7 @@ package com.korona.koronaswiat.item;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.item.custom.*;
 import com.korona.koronaswiat.item.custom.stone.MinasNeumaStone;
-import com.korona.koronaswiat.item.custom.stone.SoulWaveStone;
+import com.korona.koronaswiat.item.custom.stone.Kiuskivi;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -108,9 +108,9 @@ public class ModItems {
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1), 240));
 
-    public static final RegistryObject<SoulWaveStone> STONE_SOUL_WAVE = ITEMS.register(
-            "stone_soul_wave",
-            () -> new SoulWaveStone(new Item.Properties()
+    public static final RegistryObject<Kiuskivi> STONE_KIUSKIVI = ITEMS.register(
+            "stone_kiuskivi",
+            () -> new Kiuskivi(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1), 240));
     public static final RegistryObject<Item> STONE_NECROMANCY = ITEMS.register(

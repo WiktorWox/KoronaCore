@@ -3,14 +3,17 @@
 
   "item.koronaswiat.coronacoin": "CoronaCoin",
   "item.koronaswiat.megacoronacoin": "MegaCoronaCoin",
-  "item.koronaswiat.stone_minas_neuma_crystal": "Minas Neuma crystal",
   "item.koronaswiat.strange_bread": "Strange bread",
   "item.koronaswiat.soul": "Soul in the bottle",
   "item.koronaswiat.soul_sand_dust": "Soul sand dust",
   "item.koronaswiat.soul_ingot": "Soul ingot",
   "item.koronaswiat.soul_pickaxe": "Soul pickaxe",
+
+  "item.koronaswiat.stone_minas_neuma_crystal": "Minas Neuma crystal",
   "item.koronaswiat.stone_necromancy": "Necromancy crystal",
   "item.koronaswiat.stone_necromancy_upgraded": "Upgraded necromancy crystal",
+  "item.koronaswiat.stone_kiuskivi": "Kiuaskivi",
+
   "item.koronaswiat.runestone_blue": "Blue runestone",
   "item.koronaswiat.runestone_purple": "Purple runestone",
   "item.koronaswiat.runestone_red": "Red runestone",
