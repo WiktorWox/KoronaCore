@@ -3,6 +3,8 @@ package com.korona.koronaswiat.block.custom;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.container.HeartOfTheBaseContainer;
+import com.korona.koronaswiat.heartofthebase.Network;
+import com.korona.koronaswiat.heartofthebase.NetworkManager;
 import com.korona.koronaswiat.tileentity.HeartOfTheBaseTile;
 import com.korona.koronaswiat.tileentity.ModTileEntities;
 import fr.mosca421.worldprotector.core.Region;
@@ -29,6 +31,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Dimension;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
@@ -110,6 +114,8 @@ public class HeartOfTheBase extends HorizontalBlock {
                 heartRegion.addPlayer((PlayerEntity) player);
                 //We are registering a Region
                 RegionManager.get().addRegion(heartRegion);
+                NetworkManager.get().addNetwork(new Network(heartName, world.dimension()));
+                KoronaSwiat.LOGGER.info(NetworkManager.get().getAllNetworks());
             }
         } else {
             if (!world.isClientSide) {
