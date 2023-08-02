@@ -32,6 +32,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ItemGroup.TAB_MISC)));
 
+    public static final RegistryObject<Item> NETWORK_CLEARER = ITEMS.register(
+            "network_clearer",
+            () -> new NetworkClearer());
+
+
     public static final RegistryObject<Item> FIRE_BALL = ITEMS.register("fire_ball",
             () -> new Item(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)));
