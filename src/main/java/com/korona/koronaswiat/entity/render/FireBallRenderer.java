@@ -1,7 +1,7 @@
 package com.korona.koronaswiat.entity.render;
 
 import com.korona.koronaswiat.KoronaSwiat;
-import com.korona.koronaswiat.entity.projectile.FireBallEntity;
+import com.korona.koronaswiat.entity.custom.projectile.FireBallEntity;
 import com.korona.koronaswiat.item.ModItems;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;

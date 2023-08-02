@@ -1,16 +1,10 @@
 package com.korona.koronaswiat.item.custom.stone;
 
-import com.korona.koronaswiat.KoronaSwiat;
-import com.korona.koronaswiat.entity.ModEntityTypes;
-import com.korona.koronaswiat.entity.projectile.FireBallEntity;
 import com.korona.koronaswiat.util.ModSoundEvent;
 import net.minecraft.entity.EntityPredicate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;

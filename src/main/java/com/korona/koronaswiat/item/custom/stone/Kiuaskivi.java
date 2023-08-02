@@ -1,7 +1,7 @@
 package com.korona.koronaswiat.item.custom.stone;
 
 import com.korona.koronaswiat.entity.ModEntityTypes;
-import com.korona.koronaswiat.entity.projectile.FireBallEntity;
+import com.korona.koronaswiat.entity.custom.projectile.FireBallEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effects;
