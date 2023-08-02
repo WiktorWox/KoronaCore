@@ -4,6 +4,7 @@
   "item.koronaswiat.coronacoin": "CoronaCoin",
   "item.koronaswiat.megacoronacoin": "MegaCoronaCoin",
   "item.koronaswiat.strange_bread": "Strange bread",
+  "item.koronaswiat.network_clearer": "Network clearer",
   "item.koronaswiat.soul": "Soul in the bottle",
   "item.koronaswiat.soul_sand_dust": "Soul sand dust",
   "item.koronaswiat.soul_ingot": "Soul ingot",
@@ -28,6 +29,7 @@
   "item.koronaswiat.anduril": "Andúril",
   "item.koronaswiat.wand": "Magic staff",
   "item.koronaswiat.regeneration_banner": "Supporter's banner (regeneration)",
+  "item.koronaswiat.raidfarming_spawn_egg": "Raidfarming spawn egg",
 
   "block.koronaswiat.upgrade_container": "Upgrade container",
   "block.koronaswiat.banner_stand": "Banner stand",

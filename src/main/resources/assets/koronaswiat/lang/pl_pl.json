@@ -4,6 +4,7 @@
   "item.koronaswiat.coronacoin": "KoronaCoin",
   "item.koronaswiat.megacoronacoin": "MegaKoronaCoin",
   "item.koronaswiat.strange_bread": "Dziwny chleb",
+  "item.koronaswiat.network_clearer": "Usuwacz networków",
   "item.koronaswiat.soul": "Dusza w butelce",
   "item.koronaswiat.soul_sand_dust": "Proszek z piasku dusz",
   "item.koronaswiat.soul_ingot": "Sztabka dusz",
@@ -28,6 +29,7 @@
   "item.koronaswiat.anduril": "Andúril",
   "item.koronaswiat.wand": "Magiczna laska",
   "item.koronaswiat.regeneration_banner": "Sztandar wspieracza (regeneracji)",
+  "item.koronaswiat.raidfarming_spawn_egg": "Jajo farmerajda",
 
   "block.koronaswiat.upgrade_container": "Pojemnik na ulepszenia",
   "block.koronaswiat.banner_stand": "Stojak na sztandar",

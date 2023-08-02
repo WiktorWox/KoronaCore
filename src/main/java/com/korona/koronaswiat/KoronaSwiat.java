@@ -4,6 +4,8 @@ import com.korona.koronaswiat.block.ModBlocks;
 import com.korona.koronaswiat.container.ModContainers;
 import com.korona.koronaswiat.entity.ModEntityTypes;
 import com.korona.koronaswiat.entity.Villager;
+import com.korona.koronaswiat.entity.custom.RaidfarmingEntity;
+import com.korona.koronaswiat.entity.render.RaidfarmingRenderer;
 import com.korona.koronaswiat.guis.WandGui;
 import com.korona.koronaswiat.item.ModItems;
 import com.korona.koronaswiat.entity.render.FireBallRenderer;
@@ -88,6 +90,7 @@ public class KoronaSwiat {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         MinecraftForge.EVENT_BUS.register(new WandGui());
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FIRE_BALL.get(), FireBallRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.RAIDFARMING.get(), RaidfarmingRenderer::new);
         event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.WAND_CONTAINER.get(),
                     WandScreen::new);
