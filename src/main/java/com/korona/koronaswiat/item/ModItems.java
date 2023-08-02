@@ -1,6 +1,7 @@
 package com.korona.koronaswiat.item;
 
 import com.korona.koronaswiat.KoronaSwiat;
+import com.korona.koronaswiat.entity.ModEntityTypes;
 import com.korona.koronaswiat.item.custom.*;
 import com.korona.koronaswiat.item.custom.stone.MinasNeumaStone;
 import com.korona.koronaswiat.item.custom.stone.Kiuaskivi;
@@ -39,6 +40,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> FIRE_BALL = ITEMS.register("fire_ball",
             () -> new Item(new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)));
+
+    public static final RegistryObject<Item> SPEAR = ITEMS.register("spear",
+            () -> new SpearWeapon(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)));
 
     public static final RegistryObject<Item> STRANGE_BREAD = ITEMS.register("strange_bread",
@@ -152,4 +157,10 @@ public class ModItems {
             () -> new BannerItem(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(1), "minecraft:regeneration", 10, 1));
+
+    // -- SPAWN EGGS
+    public static final RegistryObject<ModSpawnEggItem> RAIDFARMING_SPAWN_EGG = ITEMS.register("raidfarming_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.RAIDFARMING, 0xd4a974, 0x5d8a45,
+                    new Item.Properties().tab(ItemGroup.TAB_MISC)));
+
 }

@@ -3,6 +3,7 @@ package com.korona.koronaswiat.entity;
 import com.korona.koronaswiat.KoronaSwiat;
 import com.korona.koronaswiat.entity.custom.RaidfarmingEntity;
 import com.korona.koronaswiat.entity.custom.projectile.FireBallEntity;
+import com.korona.koronaswiat.entity.custom.projectile.SpearEntity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.fml.RegistryObject;
@@ -23,6 +24,11 @@ public class ModEntityTypes {
             () -> EntityType.Builder.of((EntityType.IFactory<FireBallEntity>) FireBallEntity::new, EntityClassification.MISC)
                     .sized(0.5F, 0.5F)
                     .build("fire_ball"));
+
+    public static final RegistryObject<EntityType<SpearEntity>> SPEAR = ENTITY_TYPES.register("spear",
+            () -> EntityType.Builder.of((EntityType.IFactory<SpearEntity>) SpearEntity::new, EntityClassification.MISC)
+                    .sized(0.5F, 0.5F)
+                    .build("spear"));
 
 
 

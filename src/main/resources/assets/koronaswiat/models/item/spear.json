@@ -1,0 +1,6 @@
+{
+  "parent": "magistuarmory:item/iron_ahlspiess",
+  "textures": {
+    "layer0": "koronaswiat:item/spear"
+  }
+}
