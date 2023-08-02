@@ -5,6 +5,8 @@ import com.korona.koronaswiat.entity.ModEntityTypes;
 import com.korona.koronaswiat.item.custom.*;
 import com.korona.koronaswiat.item.custom.stone.MinasNeumaStone;
 import com.korona.koronaswiat.item.custom.stone.Kiuaskivi;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -150,6 +152,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModItemGroup.MAGIC_ACCESSORIES)
                     .stacksTo(16)));
+
+    public static final RegistryObject<Item> SIARAS_BELLY = ITEMS.register(
+            "siaras_belly",
+            () -> new SiarasBelly(ModArmorMaterial.SIARA, EquipmentSlotType.CHEST, new Item.Properties()
+                    .tab(ModItemGroup.MAGIC_ACCESSORIES)
+                    .stacksTo(1)));
 
     // -- BANNERS
     public static final RegistryObject<Item> REGENERATION_BANNER = ITEMS.register(

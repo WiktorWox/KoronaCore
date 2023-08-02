@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#D ",
+        " SD",
+        "#SD"
+    ],
+    "key": {
+        "#": {
+            "item": "magistuarmory:leather_strip"
+        },
+        "D": {
+            "item": "minecraft:leather"
+        },
+        "S": {
+            "item": "minecraft:slime_ball"
+        }
+    },
+    "result": {
+        "item": "koronaswiat:siaras_belly",
+        "count": 1
+    }
+}

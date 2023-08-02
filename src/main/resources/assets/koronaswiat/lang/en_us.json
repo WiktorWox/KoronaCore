@@ -30,6 +30,7 @@
   "item.koronaswiat.wand": "Magic staff",
   "item.koronaswiat.regeneration_banner": "Supporter's banner (regeneration)",
   "item.koronaswiat.raidfarming_spawn_egg": "Raidfarming spawn egg",
+  "item.koronaswiat.siaras_belly": "Siara's belly",
 
   "block.koronaswiat.upgrade_container": "Upgrade container",
   "block.koronaswiat.banner_stand": "Banner stand",
@@ -47,6 +48,7 @@
   "tooltip.koronaswiat.soul_pickaxe": "You can use this item when holding §9ALT§r. It will consume an §oSoul in a bottle§r and the pickaxe will be more powerful than normal",
   "tooltip.koronaswiat.soul_pickaxe.charged": "Soul pickaxe is §echarged§r. Remaining blocks: §9",
   "tooltip.koronaswiat.soul_pickaxe.time": " blocks§r",
+  "tooltip.koronaswiat.siaras_belly": "If you are wearing this item and a creature deals damage to you, it is knocked back in the direction you are facing",
   "tooltip.koronaswiat.shift": "Hold §eSHIFT§r for more information",
 
   "text.koronaswiat.stun_text": "You're stuned!",
