@@ -25,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -38,8 +39,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
 
-public class HeartOfTheBase extends HorizontalBlock {
+public class HeartOfTheBase extends HorizontalBlock implements INetworkBlock {
     public HeartOfTheBase(Properties properties) {
         super(properties);
     }
@@ -58,19 +63,19 @@ public class HeartOfTheBase extends HorizontalBlock {
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos,
                                 PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if(!worldIn.isClientSide()) {
+        if (!worldIn.isClientSide()) {
             TileEntity tileEntity = worldIn.getBlockEntity(pos);
 
-            if(!player.isCrouching()) {
-                if(tileEntity instanceof HeartOfTheBaseTile) {
+            if (!player.isCrouching()) {
+                if (tileEntity instanceof HeartOfTheBaseTile) {
                     INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
                     //We are openning a heart gui
-                    NetworkHooks.openGui(((ServerPlayerEntity)player), containerProvider, tileEntity.getBlockPos());
+                    NetworkHooks.openGui(((ServerPlayerEntity) player), containerProvider, tileEntity.getBlockPos());
                 } else {
                     throw new IllegalStateException("Our Container provider is missing!");
                 }
             } else {
-                if(tileEntity instanceof HeartOfTheBaseTile) {
+                if (tileEntity instanceof HeartOfTheBaseTile) {
                 }
             }
         }
@@ -90,6 +95,16 @@ public class HeartOfTheBase extends HorizontalBlock {
                 return new HeartOfTheBaseContainer(i, worldIn, pos, playerInventory, playerEntity);
             }
         };
+    }
+
+    protected static boolean canConnectTo(BlockState blockState, IBlockReader world, BlockPos pos, @Nullable Direction direction) {
+        if (blockState.is(ModBlocks.CANAL_OF_SOULS.get())) {
+            return true;
+        } else if (blockState instanceof INetworkBlock) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void setPlacedBy(World world, BlockPos blockPos, BlockState blockState, @Nullable LivingEntity player, ItemStack itemStack) {
@@ -114,18 +129,21 @@ public class HeartOfTheBase extends HorizontalBlock {
                 heartRegion.addPlayer((PlayerEntity) player);
                 //We are registering a Region
                 RegionManager.get().addRegion(heartRegion);
-                NetworkManager.get().addNetwork(new Network(heartName, world.dimension()));
+                Network network = new Network(heartName, world.dimension());
+                network.addBlock(blockPos);
+                NetworkManager.get().addNetwork(network);
+                update(blockPos, world);
                 KoronaSwiat.LOGGER.info(NetworkManager.get().getAllNetworks());
             }
         } else {
             if (!world.isClientSide) {
                 //Send warning message
                 player.sendMessage(new TranslationTextComponent("message.heart.wrong_name", heartName), player.getUUID());
-                //Destroy block
-                world.destroyBlock(blockPos, false);
                 //Drop block item
                 InventoryHelper.dropItemStack(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(ModBlocks.HEART_OF_THE_BASE.get().asItem()));
             }
+            //Destroy block
+            world.destroyBlock(blockPos, false);
         }
     }
 
@@ -136,11 +154,36 @@ public class HeartOfTheBase extends HorizontalBlock {
         super.onRemove(blockState, world, blockPos, blockState1, b);
         if (!blockState.is(blockState1.getBlock())) {
             if (tileentity instanceof IInventory) {
-                InventoryHelper.dropContents(world, blockPos, (IInventory)tileentity);
+                InventoryHelper.dropContents(world, blockPos, (IInventory) tileentity);
                 world.updateNeighbourForOutputSignal(blockPos, this);
             }
 
             super.onRemove(blockState, world, blockPos, blockState1, b);
+        }
+    }
+
+    private void update(BlockPos pos, World world) {
+        Queue<BlockPos> queue = new LinkedList<>(); // create a queue to hold the positions of blocks that need to be updated
+        Set<BlockPos> visited = new HashSet<>(); // create a set to hold the positions of visited blocks
+        queue.add(pos); // add the starting block to the queue
+        visited.add(pos); // add the starting block to the visited set
+
+        while (!queue.isEmpty()) { // loop until all blocks in the queue have been processed
+            BlockPos currentPos = queue.remove(); // get the next block position from the queue
+            Block currentBlock = world.getBlockState(currentPos).getBlock(); // get the current block instance
+
+            world.updateNeighborsAt(currentPos, currentBlock); // notify neighbors of the current block update
+
+            // add all neighboring blocks to the queue for processing
+            for (Direction direction : Direction.values()) {
+                BlockPos neighborPos = currentPos.offset(direction.getNormal());
+                Block neighborBlock = world.getBlockState(neighborPos).getBlock();
+
+                if (canConnectTo(world.getBlockState(neighborPos), world, neighborPos, null) && !visited.contains(neighborPos)) {
+                    queue.add(neighborPos);
+                    visited.add(neighborPos);
+                }
+            }
         }
     }
 

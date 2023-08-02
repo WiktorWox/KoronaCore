@@ -11,5 +11,12 @@ import net.minecraftforge.common.util.INBTSerializable;
 
 public interface INetwork extends INBTSerializable<CompoundNBT> {
     String getName();
+
     RegistryKey<World> getDimension();
+
+    void addBlock(BlockPos pos);
+
+    void removeBlock(BlockPos pos);
+
+    boolean isBlock(BlockPos pos);
 }

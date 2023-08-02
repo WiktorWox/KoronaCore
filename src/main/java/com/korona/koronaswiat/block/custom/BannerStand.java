@@ -28,7 +28,7 @@ import net.minecraftforge.fml.LogicalSidedProvider;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BannerStand extends Block {
+public class BannerStand extends Block implements INetworkBlock {
 
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL;
     public BannerStand(Properties properties) {

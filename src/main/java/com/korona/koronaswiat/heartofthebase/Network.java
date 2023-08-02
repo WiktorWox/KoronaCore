@@ -15,10 +15,13 @@ import net.minecraft.world.World;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Network implements INetwork {
     private String name;
+
+    private final Set<BlockPos> positions = new HashSet<>();
 
     private RegistryKey<World> dimension;
 
@@ -37,6 +40,18 @@ public class Network implements INetwork {
 
     public RegistryKey<World> getDimension() {
         return this.dimension;
+    }
+
+    public void addBlock(BlockPos pos) {
+        positions.add(pos);
+    }
+
+    public void removeBlock(BlockPos pos) {
+        positions.remove(pos);
+    }
+
+    public boolean isBlock(BlockPos pos) {
+        return positions.contains(pos);
     }
 
     public CompoundNBT serializeNBT() {

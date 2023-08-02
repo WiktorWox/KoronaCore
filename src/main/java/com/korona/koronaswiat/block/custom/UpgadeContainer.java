@@ -28,7 +28,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
 
-public class UpgadeContainer extends HorizontalBlock {
+public class UpgadeContainer extends HorizontalBlock implements INetworkBlock {
     public UpgadeContainer(Properties properties) {
         super(properties);
     }
